@@ -1,15 +1,16 @@
-{{ define "main" }}  
-  
-<section class="grid">  
-  
-{{ $projects := where site.RegularPages "Params.featured" true }}  
-  
-{{ range first 12 ($projects.ByDate.Reverse) }}  
-  
-  {{ partial "tile.html" . }}  
-  
-{{ end }}  
-  
-</section>  
-  
+{{ define "main" }}
+
+<section class="grid">
+
+  {{ $allowedSections := slice "reel" "animation" "illustration" "digital-comic" "sketchbook" "music-videos" }}
+
+  {{ $projects := where site.RegularPages "Section" "in" $allowedSections }}
+  {{ $projects = $projects.ByDate.Reverse }}
+
+  {{ range $projects }}
+    {{ partial "tile.html" . }}
+  {{ end }}
+
+</section>
+
 {{ end }}
