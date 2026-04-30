@@ -1,4 +1,22 @@
-{{- $css := resources.Get "css/main.css" -}}
+{{- $cssFiles := slice
+  "css/base.css"
+  "css/themes.css"
+  "css/layout.css"
+  "css/header.css"
+  "css/grid.css"
+  "css/project.css"
+  "css/pages.css"
+-}}
+
+{{- $cssResources := slice -}}
+{{- range $cssFiles -}}
+  {{- with resources.Get . -}}
+    {{- $cssResources = $cssResources | append . -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $css := $cssResources | resources.Concat "css/main.css" -}}
+
 {{- if hugo.IsProduction -}}
   {{- $css = $css | minify | fingerprint -}}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
