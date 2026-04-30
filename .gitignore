@@ -1,0 +1,21 @@
+# Hugo
+public/
+resources/_gen/
+.hugo_build.lock
+
+# Obsidian / local notes
+.obsidian/
+.trash/
+.modal-forms/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Secrets
+*_ci_key
+*_ci_key.pub
+*.pem
+*.key

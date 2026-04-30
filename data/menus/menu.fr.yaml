@@ -1,0 +1,22 @@
+main:
+  - name: Reel
+    url: /reel/
+    weight: 10
+  - name: Animation & Motion
+    url: /animation/
+    weight: 20
+  - name: Illustration
+    url: /illustration/
+    weight: 30
+  - name: Digital Comic
+    url: /digital-comic/
+    weight: 50
+  - name: Sketchbook
+    url: /sketchbook/
+    weight: 60
+  - name: Biographie
+    url: /biography/
+    weight: 70
+  - name: Contact
+    url: /contact/
+    weight: 80

@@ -1,0 +1,72 @@
+{{ $p := . }}
+
+{{ $cover := $p.Resources.GetMatch "cover*" }}
+{{ $preview := $p.Resources.GetMatch "preview*" }}
+
+{{ $youtube := $p.Params.youtube }}
+{{ $vimeo := $p.Params.vimeo }}
+
+{{ $remoteThumb := "" }}
+
+{{ if and (not $cover) $youtube }}
+  {{ $remoteThumb = printf "https://i.ytimg.com/vi/%s/hqdefault.jpg" $youtube }}
+{{ end }}
+
+{{ if and (not $cover) (not $remoteThumb) $vimeo }}
+  {{ $oembedURL := printf "https://vimeo.com/api/oembed.json?url=https://vimeo.com/%s" $vimeo }}
+  {{ with try (resources.GetRemote $oembedURL) }}
+    {{ with .Value }}
+      {{ $data := . | transform.Unmarshal }}
+      {{ with $data.thumbnail_url }}
+        {{ $remoteThumb = . }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+<a
+  class="tile {{ if $preview }}tile--has-preview{{ end }}"
+  href="{{ $p.RelPermalink }}"
+  aria-label="{{ $p.Title }}">
+
+  <div class="tile__frame">
+
+    {{ if $cover }}
+      {{ partial "img.html" (dict
+        "page" $p
+        "src" $cover.Name
+        "alt" $p.Title
+        "class" "tile__img"
+      ) }}
+    {{ else if $remoteThumb }}
+      <img
+        class="tile__img"
+        src="{{ $remoteThumb }}"
+        alt="{{ $p.Title }}"
+        loading="lazy"
+        decoding="async">
+    {{ else }}
+      <div class="tile__media"></div>
+    {{ end }}
+
+    {{ if $preview }}
+      <div class="tile__preview" aria-hidden="true">
+        <video
+          class="tile__preview-video"
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          {{ if $cover }}poster="{{ $cover.RelPermalink }}"{{ else if $remoteThumb }}poster="{{ $remoteThumb }}"{{ end }}>
+          <source src="{{ $preview.RelPermalink }}">
+        </video>
+      </div>
+    {{ end }}
+
+  </div>
+
+  <div class="tile__caption">
+    <div class="tile__title">{{ $p.Title }}</div>
+  </div>
+
+</a>

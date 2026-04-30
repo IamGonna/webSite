@@ -1,0 +1,287 @@
+/* Contact & biography */
+.page-hero{
+  padding: 34px 0 18px;
+}
+
+.page-hero__inner{
+  max-width: 980px;
+}
+
+.page-hero__eyebrow{
+  margin: 0 0 8px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.72;
+}
+
+.page-hero__title{
+  margin: 0;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(46px, 7vw, 88px);
+  line-height: 0.95;
+  letter-spacing: 0.03em;
+}
+
+.page-hero__intro{
+  margin: 14px 0 0;
+  max-width: 62ch;
+  opacity: 0.88;
+}
+
+.page-shell{
+  padding: 12px 0 38px;
+}
+
+.page-card{
+  background: var(--surface);
+  border-radius: 24px;
+  box-shadow: 0 12px 34px var(--shadow);
+  padding: 28px;
+}
+
+.page-card--bio{
+  max-width: 920px;
+}
+
+.richtext{
+  max-width: 72ch;
+}
+
+.richtext h2,
+.richtext h3{
+  margin-top: 1.6em;
+  margin-bottom: 0.5em;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 1;
+}
+
+.richtext h2{
+  font-size: clamp(30px, 4vw, 44px);
+}
+
+.richtext h3{
+  font-size: clamp(24px, 3vw, 34px);
+}
+
+.richtext p,
+.richtext li{
+  line-height: 1.7;
+}
+
+.richtext ul{
+  margin: 0.8em 0 0.8em 1.2em;
+  padding: 0;
+}
+
+.contact-grid{
+  display: grid;
+  grid-template-columns: 1.4fr 0.9fr;
+  gap: 24px;
+}
+
+.contact-side{
+  align-self: start;
+}
+
+.contact-side__title{
+  margin: 0 0 18px;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1;
+  letter-spacing: 0.03em;
+}
+
+.contact-side p{
+  margin: 0 0 18px;
+  line-height: 1.6;
+}
+
+.contact-side a{
+  color: var(--accent);
+}
+
+@media (max-width: 900px){
+  .contact-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .page-card{
+    padding: 22px;
+  }
+}
+
+.bio-hero{
+  padding: 40px 0;
+}
+
+.bio-hero__grid{
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.bio-hero__media img{
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.bio-hero__title{
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(48px, 6vw, 90px);
+  line-height: 0.95;
+}
+
+.bio-hero__intro{
+  max-width: 60ch;
+  opacity: 0.85;
+}
+
+@media (max-width: 900px){
+  .bio-hero__grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-hero{
+  text-align: center;
+  padding: 60px 0 30px;
+}
+
+.contact-hero__title{
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(48px, 6vw, 90px);
+}
+
+.contact-hero__cta{
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* ===== HERO ===== */
+.bio-hero-premium{
+  position: relative;
+  height: 70vh;
+  min-height: 420px;
+  display: flex;
+  align-items: flex-end;
+  padding: 40px;
+  overflow: hidden;
+}
+
+.bio-hero-premium__bg{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.bio-hero-premium__bg img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+}
+
+.bio-hero-premium__content{
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+.bio-eyebrow{
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  opacity: 0.7;
+}
+
+.bio-title{
+  font-family: "Bebas Neue";
+  font-size: clamp(60px, 8vw, 120px);
+  line-height: 0.9;
+}
+
+.bio-intro{
+  max-width: 50ch;
+  opacity: 0.85;
+}
+
+/* ===== SECTIONS ===== */
+.bio-section{
+  padding: 60px 0;
+}
+
+.bio-container{
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.bio-section__title{
+  font-family: "Bebas Neue";
+  font-size: clamp(36px, 5vw, 60px);
+  margin-bottom: 20px;
+}
+
+/* ===== TAGS ===== */
+.bio-tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.bio-tag{
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  font-weight: 600;
+}
+
+/* ===== CLIENTS ===== */
+.bio-clients{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px,1fr));
+  gap: 14px;
+}
+
+.bio-client{
+  padding: 16px;
+  text-align: center;
+  background: rgba(255,255,255,0.05);
+  border-radius: 14px;
+}
+
+/* ===== TIMELINE ===== */
+.bio-timeline{
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.bio-timeline__item{
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 12px;
+}
+
+.bio-timeline__year{
+  font-weight: 700;
+  opacity: 0.7;
+}
+
+.bio-timeline__text{
+  opacity: 0.9;
+}

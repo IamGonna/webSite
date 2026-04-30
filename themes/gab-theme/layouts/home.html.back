@@ -1,0 +1,33 @@
+{{ define "main" }}
+
+<section class="home-hero">
+  <h1 class="home-title">{{ .Site.Title }}</h1>
+  <p class="home-subtitle">Portfolio en construction</p>
+</section>
+
+<section class="grid" aria-label="Grille portfolio">
+  {{ $projects := where site.RegularPages "Section" "projects" }}
+  {{ $featured := where $projects ".Params.featured" true }}
+
+{{ range $i, $p := first 12 $featured }}
+  {{ $idx := add $i 1 }}
+  {{ $coverName := $p.Params.cover }}
+  {{ $cover := $p.Resources.GetMatch $coverName }}
+
+<a class="tile tile--{{ $idx }}" href="{{ $p.RelPermalink }}" aria-label="{{ $p.Title }}">
+  <div class="tile__frame">
+    {{ if $cover }}
+      {{ partial "img.html" (dict "page" $p "src" $coverName "alt" $p.Title "class" "tile__img") }}
+    {{ else }}
+      <div class="tile__media"></div>
+    {{ end }}
+  </div>
+
+  <div class="tile__caption">
+    <div class="tile__title">{{ $p.Title }}</div>
+  </div>
+</a>
+{{ end }}
+</section>
+
+{{ end }}

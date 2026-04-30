@@ -1,0 +1,123 @@
+{{ $p := . }}
+
+{{/* -------------------- COVER LOCALE -------------------- */}}
+{{ $cover := "" }}
+{{ range $p.Resources.ByType "image" }}
+  {{ if strings.HasPrefix .Name "cover" }}
+    {{ $cover = . }}
+    {{ break }}
+  {{ end }}
+{{ end }}
+
+{{/* -------------------- COVER DISTANTE -------------------- */}}
+{{ $coverRemote := $p.Params.cover }}
+
+{{/* -------------------- PREVIEW LOCALE -------------------- */}}
+{{ $preview := $p.Resources.GetMatch "preview*" }}
+
+{{/* -------------------- PARAMS VIDEO -------------------- */}}
+{{ $youtubeRaw := $p.Params.youtube }}
+{{ $vimeoRaw := $p.Params.vimeo }}
+{{ $instagramRaw := $p.Params.instagram }}
+
+{{/* -------------------- FALLBACK THUMB -------------------- */}}
+{{ $remoteThumb := "" }}
+
+{{/* ---------- YOUTUBE / SHORTS ---------- */}}
+{{ with $youtubeRaw }}
+  {{ $input := . }}
+  {{ $id := $input }}
+
+  {{ if strings.Contains $input "youtu.be" }}
+    {{ $id = replaceRE ".*youtu\\.be/([^?&/]+).*" "$1" $input }}
+  {{ else if strings.Contains $input "youtube.com/watch" }}
+    {{ $id = replaceRE ".*[?&]v=([^?&/]+).*" "$1" $input }}
+  {{ else if strings.Contains $input "youtube.com/embed" }}
+    {{ $id = replaceRE ".*embed/([^?&/]+).*" "$1" $input }}
+  {{ else if strings.Contains $input "youtube.com/shorts/" }}
+    {{ $id = replaceRE ".*shorts/([^?&/]+).*" "$1" $input }}
+  {{ end }}
+
+  {{ if and (not $cover) (not $coverRemote) $id }}
+    {{ $remoteThumb = printf "https://i.ytimg.com/vi/%s/hqdefault.jpg" $id }}
+  {{ end }}
+{{ end }}
+
+{{/* ---------- VIMEO ---------- */}}
+{{ if and (not $cover) (not $coverRemote) (not $remoteThumb) $vimeoRaw }}
+  {{ $input := $vimeoRaw }}
+  {{ $id := $input }}
+
+  {{ if strings.Contains $input "vimeo.com" }}
+    {{ $id = replaceRE ".*/([0-9]+).*" "$1" $input }}
+  {{ end }}
+
+  {{ if $id }}
+    {{ $oembedURL := printf "https://vimeo.com/api/oembed.json?url=https://vimeo.com/%s" $id }}
+    {{ with try (resources.GetRemote $oembedURL) }}
+      {{ with .Value }}
+        {{ $data := . | transform.Unmarshal }}
+        {{ with $data.thumbnail_url }}
+          {{ $remoteThumb = . }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+<a class="tile {{ if $preview }}tile--has-preview{{ end }}" href="{{ $p.RelPermalink }}" aria-label="{{ $p.Title }}">
+  <div class="tile__frame">
+
+    {{ if $cover }}
+      {{ partial "img.html" (dict
+        "page" $p
+        "src" $cover.Name
+        "alt" $p.Title
+        "class" "tile__img"
+      ) }}
+
+    {{ else if $coverRemote }}
+      <img
+        class="tile__img"
+        src="{{ $coverRemote }}"
+        alt="{{ $p.Title }}"
+        loading="lazy"
+        decoding="async">
+
+    {{ else if and $instagramRaw (not $cover) (not $coverRemote) }}
+      <div class="tile__media">
+        <span class="tile__media-label">Instagram Reel</span>
+      </div>
+
+    {{ else if $remoteThumb }}
+      <img
+        class="tile__img"
+        src="{{ $remoteThumb }}"
+        alt="{{ $p.Title }}"
+        loading="lazy"
+        decoding="async">
+
+    {{ else }}
+      <div class="tile__media"></div>
+    {{ end }}
+
+    {{ if $preview }}
+      <div class="tile__preview" aria-hidden="true">
+        <video
+          class="tile__preview-video"
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          {{ if $cover }}poster="{{ $cover.RelPermalink }}"{{ else if $coverRemote }}poster="{{ $coverRemote }}"{{ else if $remoteThumb }}poster="{{ $remoteThumb }}"{{ end }}>
+          <source src="{{ $preview.RelPermalink }}">
+        </video>
+      </div>
+    {{ end }}
+
+  </div>
+
+  <div class="tile__caption">
+    <div class="tile__title">{{ $p.Title }}</div>
+  </div>
+</a>

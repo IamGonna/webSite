@@ -1,0 +1,13 @@
+{{ define "main" }}
+
+<section class="home-hero">
+  <h1 class="home-title">{{ .Title }}</h1>
+</section>
+
+<section class="tag-list">
+  {{ range .Pages.ByTitle }}
+    <a class="tag-chip" href="{{ .RelPermalink }}">{{ .Title }}</a>
+  {{ end }}
+</section>
+
+{{ end }}

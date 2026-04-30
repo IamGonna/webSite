@@ -1,0 +1,15 @@
+{{ define "main" }}
+
+<section class="home-hero">
+  <h1 class="home-title">{{ .Title }}</h1>
+</section>
+
+<section class="grid" aria-label="Grille {{ .Title }}">
+  {{ $pages := .Pages.ByDate.Reverse }}
+
+  {{ range $pages }}
+    {{ partial "tile.html" . }}
+  {{ end }}
+</section>
+
+{{ end }}

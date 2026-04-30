@@ -1,0 +1,11 @@
+/* Layout container */
+.container{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 18px 22px;
+}
+
+/* Main content */
+.main-content{
+  padding: 18px 0 60px;
+}

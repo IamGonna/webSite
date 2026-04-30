@@ -1,0 +1,18 @@
+baseURL = "http://localhost:1313/"
+title = "Gab Hugo Site"
+theme = "gab-theme"
+
+defaultContentLanguage = "fr"
+defaultContentLanguageInSubdir = true
+
+[languages]
+  [languages.fr]
+    languageName = "Français"
+    weight = 1
+
+  [languages.en]
+    languageName = "English"
+    weight = 2
+
+[taxonomies]  
+tag = "tags"

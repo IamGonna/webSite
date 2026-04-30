@@ -1,0 +1,22 @@
+{{ define "main" }}
+<article class="project">
+  <header class="project__header">
+    <h1 class="project__title">{{ .Title }}</h1>
+    {{ with .Params.tags }}
+      <p class="project__tags">
+        {{ range . }}<span class="tag">#{{ . }}</span> {{ end }}
+      </p>
+    {{ end }}
+  </header>
+
+  {{ with .Params.cover }}
+    <div class="project__cover">
+      {{ partial "img.html" (dict "page" $ "src" . "alt" $.Title "class" "project__img") }}
+    </div>
+  {{ end }}
+
+  <div class="project__content">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}

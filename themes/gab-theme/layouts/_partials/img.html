@@ -1,0 +1,43 @@
+{{/* 
+partial "img.html" (dict "page" . "src" "cover.jpg" "alt" .Title "class" "project__img")
+*/}}
+
+{{- $p := .page -}}
+{{- $src := .src -}}
+{{- $alt := .alt | default "" -}}
+{{- $class := .class | default "" -}}
+
+{{- $img := $p.Resources.GetMatch $src -}}
+{{- if not $img -}}
+  {{- /* image introuvable */ -}}
+{{- else -}}
+  {{- $w1 := 480 -}}
+  {{- $w2 := 800 -}}
+  {{- $w3 := 1200 -}}
+
+  {{/* WebP */}}
+  {{- $webp1 := $img.Resize (printf "%dx webp q80" $w1) -}}
+  {{- $webp2 := $img.Resize (printf "%dx webp q80" $w2) -}}
+  {{- $webp3 := $img.Resize (printf "%dx webp q80" $w3) -}}
+
+  {{/* Fallback JPEG/PNG (garde le format original si png/jpg) */}}
+  {{- $orig1 := $img.Resize (printf "%dx q80" $w1) -}}
+  {{- $orig2 := $img.Resize (printf "%dx q80" $w2) -}}
+  {{- $orig3 := $img.Resize (printf "%dx q80" $w3) -}}
+
+  <picture>
+    <source
+      type="image/webp"
+      srcset="{{ $webp1.RelPermalink }} {{ $w1 }}w, {{ $webp2.RelPermalink }} {{ $w2 }}w, {{ $webp3.RelPermalink }} {{ $w3 }}w"
+      sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw">
+
+    <img
+      class="{{ $class }}"
+      src="{{ $orig2.RelPermalink }}"
+      srcset="{{ $orig1.RelPermalink }} {{ $w1 }}w, {{ $orig2.RelPermalink }} {{ $w2 }}w, {{ $orig3.RelPermalink }} {{ $w3 }}w"
+      sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw"
+      alt="{{ $alt }}"
+      loading="lazy"
+      decoding="async">
+  </picture>
+{{- end -}}

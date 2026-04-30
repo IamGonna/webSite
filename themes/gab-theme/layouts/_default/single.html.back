@@ -1,0 +1,117 @@
+{{ define "main" }}
+
+{{ $cover := .Resources.GetMatch "cover*" }}
+{{ $youtube := .Params.youtube }}
+{{ $vimeo := .Params.vimeo }}
+
+<article class="project">
+
+  <header class="project__header">
+    <h1 class="project__title">{{ .Title }}</h1>
+
+    {{ with .Date }}
+      <p class="project__date">{{ .Format "2 January 2006" }}</p>
+    {{ end }}
+
+    {{ with .Params.description }}
+      <p class="project__intro">{{ . }}</p>
+    {{ end }}
+
+    {{ with .Params.tags }}
+      <p class="project__tags">
+        {{ range . }}
+          <a class="tag" href="{{ (printf "/tags/%s/" .) | relLangURL }}">#{{ . }}</a>
+        {{ end }}
+      </p>
+    {{ end }}
+  </header>
+
+</article>
+
+{{ if $cover }}
+  <section class="project__cover">
+    <img
+      class="project__img"
+      src="{{ $cover.RelPermalink }}"
+      alt="{{ .Title }}"
+      loading="eager"
+      decoding="async">
+  </section>
+{{ end }}
+
+{{ with $youtube }}
+  <section class="project__embed">
+    <div class="video-embed">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/{{ . }}"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin">
+      </iframe>
+    </div>
+
+    <p class="project__video-fallback">
+      <a href="https://www.youtube.com/watch?v={{ . }}" target="_blank" rel="noopener">
+        Voir la vidéo sur YouTube
+      </a>
+    </p>
+  </section>
+{{ end }}
+
+{{ with $vimeo }}
+  <section class="project__embed">
+    <div class="video-embed">
+      <iframe
+        src="https://player.vimeo.com/video/{{ . }}"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+    </div>
+  </section>
+{{ end }}
+
+<article class="project">
+
+  <section class="project__content">
+    {{ .Content }}
+  </section>
+
+  {{ $gallery := slice }}
+  {{ range .Resources.ByType "image" }}
+    {{ if and
+        (not (strings.HasPrefix .Name "cover"))
+        (not (strings.HasPrefix .Name "preview")) }}
+      {{ $gallery = $gallery | append . }}
+    {{ end }}
+  {{ end }}
+
+  {{ if gt (len $gallery) 0 }}
+    <section class="project__gallery">
+      <h2 class="project__section-title">Gallery</h2>
+
+      <div class="project__gallery-grid">
+        {{ range $gallery }}
+          <a
+            class="project__gallery-item"
+            href="{{ .RelPermalink }}"
+            data-lightbox="image"
+            data-lightbox-src="{{ .RelPermalink }}">
+            <img
+              src="{{ .RelPermalink }}"
+              alt=""
+              loading="lazy"
+              decoding="async"
+              class="project__gallery-img">
+          </a>
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+
+</article>
+
+{{ end }}

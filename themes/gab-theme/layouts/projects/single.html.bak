@@ -1,0 +1,82 @@
+{{ define "main" }}
+
+<article class="project">
+
+  <header class="project__header">
+    <h1 class="project__title">{{ .Title }}</h1>
+
+    {{ with .Params.tags }}
+      <p class="project__tags">
+        {{ range . }}
+          <a class="tag" href="{{ (printf "/tags/%s/" .) | relLangURL }}">#{{ . }}</a>
+        {{ end }}
+      </p>
+    {{ end }}
+
+    {{ with .Params.description }}
+      <p class="project__intro">{{ . }}</p>
+    {{ end }}
+  </header>
+
+  {{ $cover := .Resources.GetMatch "cover*" }}
+  {{ if $cover }}
+    <section class="project__cover">
+      {{ partial "img.html" (dict
+        "page" .
+        "src" $cover.Name
+        "alt" .Title
+        "class" "project__img"
+      ) }}
+    </section>
+  {{ end }}
+
+  <section class="project__content">
+    {{ .Content }}
+  </section>
+
+  {{ $gallery := where (.Resources.ByType "image") "Name" "ne" $cover.Name }}
+  {{ if gt (len $gallery) 0 }}
+    <section class="project__gallery">
+      <h2 class="project__section-title">Gallery</h2>
+      <div class="project__gallery-grid">
+        {{ range $gallery }}
+          <a class="project__gallery-item" href="{{ .RelPermalink }}" target="_blank" rel="noopener">
+            <img src="{{ .RelPermalink }}" alt="" loading="lazy" class="project__gallery-img">
+          </a>
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+
+  {{ $videos := .Resources.Match "*.mp4" }}
+  {{ if gt (len $videos) 0 }}
+    <section class="project__videos">
+      <h2 class="project__section-title">Videos</h2>
+      <div class="project__video-list">
+        {{ range $videos }}
+          <video class="project__video" controls preload="metadata">
+            <source src="{{ .RelPermalink }}" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+          </video>
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+
+  {{ $webms := .Resources.Match "*.webm" }}
+  {{ if gt (len $webms) 0 }}
+    <section class="project__videos">
+      <div class="project__video-list">
+        {{ range $webms }}
+          <video class="project__video" controls preload="metadata">
+            <source src="{{ .RelPermalink }}" type="video/webm">
+            Votre navigateur ne supporte pas la vidéo.
+          </video>
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+
+</article>
+
+{{ end }}

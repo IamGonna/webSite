@@ -1,0 +1,84 @@
+{{ define "main" }}
+
+{{ $portrait := .Resources.GetMatch "portrait*" }}
+
+<!-- HERO -->
+<section class="bio-hero-premium">
+
+  {{ if $portrait }}
+  <div class="bio-hero-premium__bg">
+    <img src="{{ $portrait.RelPermalink }}" alt="{{ .Title }}">
+  </div>
+  {{ end }}
+
+  <div class="bio-hero-premium__content">
+    <p class="bio-eyebrow">Artist</p>
+    <h1 class="bio-title">{{ .Title }}</h1>
+
+    {{ with .Params.description }}
+      <p class="bio-intro">{{ . }}</p>
+    {{ end }}
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+<section class="bio-section">
+  <div class="bio-container">
+    <h2 class="bio-section__title">About</h2>
+
+    <div class="richtext">
+      {{ .Content }}
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+{{ with .Params.skills }}
+<section class="bio-section">
+  <div class="bio-container">
+    <h2 class="bio-section__title">Skills</h2>
+
+    <div class="bio-tags">
+      {{ range . }}
+        <span class="bio-tag">{{ . }}</span>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<!-- CLIENTS -->
+{{ with .Params.clients }}
+<section class="bio-section">
+  <div class="bio-container">
+    <h2 class="bio-section__title">Collaborations</h2>
+
+    <div class="bio-clients">
+      {{ range . }}
+        <div class="bio-client">{{ . }}</div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<!-- TIMELINE -->
+{{ with .Params.timeline }}
+<section class="bio-section">
+  <div class="bio-container">
+    <h2 class="bio-section__title">Timeline</h2>
+
+    <div class="bio-timeline">
+      {{ range . }}
+        <div class="bio-timeline__item">
+          <div class="bio-timeline__year">{{ .year }}</div>
+          <div class="bio-timeline__text">{{ .text }}</div>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ end }}

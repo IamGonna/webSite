@@ -1,0 +1,234 @@
+{{ define "main" }}
+
+{{ $cover := "" }}
+{{ range .Resources.ByType "image" }}
+  {{ if strings.HasPrefix .Name "cover" }}
+    {{ $cover = . }}
+    {{ break }}
+  {{ end }}
+{{ end }}
+
+{{ $youtubeRaw := .Params.youtube }}
+{{ $vimeoRaw := .Params.vimeo }}
+{{ $instagramRaw := .Params.instagram }}
+
+{{/* -----------------------------
+     Préparation des images une seule fois
+   ----------------------------- */}}
+{{ $sequence := slice }}
+{{ $others := slice }}
+
+{{ range .Resources.ByType "image" }}
+  {{ if and
+    (not (strings.HasPrefix .Name "cover"))
+    (not (strings.HasPrefix .Name "preview")) }}
+
+    {{ if findRE "^[0-9]+" .Name }}
+      {{ $sequence = $sequence | append . }}
+    {{ else }}
+      {{ $others = $others | append . }}
+    {{ end }}
+
+  {{ end }}
+{{ end }}
+
+<article class="project">
+
+  <header class="project__header">
+    <h1 class="project__title">{{ .Title }}</h1>
+
+    {{ with .Date }}
+      <p class="project__date">{{ .Format "2 January 2006" }}</p>
+    {{ end }}
+
+    {{ with .Params.description }}
+      <p class="project__intro">{{ . }}</p>
+    {{ end }}
+
+    {{ with .Params.tags }}
+      <p class="project__tags">
+        {{ range . }}
+          <a class="tag" href="{{ (printf "/tags/%s/" .) | relLangURL }}">#{{ . }}</a>
+        {{ end }}
+      </p>
+    {{ end }}
+  </header>
+
+</article>
+
+{{/* Cover large sauf si Instagram reel ou digital-comic */}}
+{{ if and $cover (not $instagramRaw) (ne .Section "digital-comic") }}
+  <section class="project__cover">
+    <img
+      class="project__img"
+      src="{{ $cover.RelPermalink }}"
+      alt="{{ .Title }}"
+      loading="eager"
+      decoding="async">
+  </section>
+{{ end }}
+
+{{ with $youtubeRaw }}
+  {{ $input := . }}
+  {{ $id := $input }}
+
+  {{ if strings.Contains $input "youtu.be" }}
+    {{ $id = replaceRE ".*youtu\\.be/([^?&/]+).*" "$1" $input }}
+  {{ else if strings.Contains $input "youtube.com/watch" }}
+    {{ $id = replaceRE ".*[?&]v=([^?&/]+).*" "$1" $input }}
+  {{ else if strings.Contains $input "youtube.com/embed" }}
+    {{ $id = replaceRE ".*embed/([^?&/]+).*" "$1" $input }}
+  {{ else if strings.Contains $input "youtube.com/shorts/" }}
+    {{ $id = replaceRE ".*shorts/([^?&/]+).*" "$1" $input }}
+  {{ end }}
+
+  <section class="project__embed">
+    <div class="video-embed">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/{{ $id }}"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin">
+      </iframe>
+    </div>
+
+    <p class="project__video-fallback">
+      <a href="https://www.youtube.com/watch?v={{ $id }}" target="_blank" rel="noopener">
+        Voir la vidéo sur YouTube
+      </a>
+    </p>
+  </section>
+{{ end }}
+
+{{ with $vimeoRaw }}
+  {{ $input := . }}
+  {{ $id := $input }}
+
+  {{ if strings.Contains $input "vimeo.com" }}
+    {{ $id = replaceRE ".*/([0-9]+).*" "$1" $input }}
+  {{ end }}
+
+  <section class="project__embed">
+    <div class="video-embed">
+      <iframe
+        src="https://player.vimeo.com/video/{{ $id }}"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+    </div>
+
+    <p class="project__video-fallback">
+      <a href="https://vimeo.com/{{ $id }}" target="_blank" rel="noopener">
+        Voir la vidéo sur Vimeo
+      </a>
+    </p>
+  </section>
+{{ end }}
+
+{{ with $instagramRaw }}
+  <section class="project__embed project__embed--instagram">
+    <blockquote
+      class="instagram-media"
+      data-instgrm-permalink="{{ . }}"
+      data-instgrm-version="14"
+      style="background:#FFF; border:0; margin:0 auto; max-width:540px; width:100%;">
+    </blockquote>
+
+    <p class="project__video-fallback">
+      <a href="{{ . }}" target="_blank" rel="noopener">
+        Voir le reel sur Instagram
+      </a>
+    </p>
+  </section>
+{{ end }}
+
+{{/* Card digital-comic seulement s'il n'y a pas de pages numérotées */}}
+{{ if and (eq .Section "digital-comic") (eq (len $sequence) 0) }}
+  {{ partial "digital-comic.html" . }}
+{{ end }}
+
+{{/* -----------------------------
+     CAS 1 : ANIMATION
+     Images numérotées en miniatures
+     AVANT le contenu markdown
+   ----------------------------- */}}
+{{ if and (eq .Section "animation") (gt (len $sequence) 0) }}
+  <section class="project project--wide">
+    <section class="project__sequence">
+      <h2 class="project__section-title">Sequence</h2>
+
+      <div class="project__sequence-grid">
+        {{ range sort $sequence "Name" }}
+          <a
+            class="project__sequence-item"
+            href="{{ .RelPermalink }}"
+            data-lightbox="image"
+            data-lightbox-src="{{ .RelPermalink }}">
+            <img
+              src="{{ .RelPermalink }}"
+              alt=""
+              loading="lazy"
+              decoding="async">
+          </a>
+        {{ end }}
+      </div>
+    </section>
+  </section>
+{{ end }}
+
+{{/* -----------------------------
+     CAS 2 : DIGITAL COMIC
+     Images numérotées verticales
+     HORS .project pour ne pas subir le max-width
+   ----------------------------- */}}
+{{ if and (eq .Section "digital-comic") (gt (len $sequence) 0) }}
+  <section class="project__comic">
+    <div class="project__comic-stack">
+      {{ range sort $sequence "Name" }}
+        <img
+          class="project__comic-img"
+          src="{{ .RelPermalink }}"
+          alt=""
+          loading="lazy"
+          decoding="async">
+      {{ end }}
+    </div>
+  </section>
+{{ end }}
+
+<article class="project">
+
+  <section class="project__content">
+    {{ .Content }}
+  </section>
+
+  {{ if gt (len $others) 0 }}
+    <section class="project__gallery">
+      <h2 class="project__section-title">Gallery</h2>
+
+      <div class="project__gallery-grid">
+        {{ range $others }}
+          <a
+            class="project__gallery-item"
+            href="{{ .RelPermalink }}"
+            data-lightbox="image"
+            data-lightbox-src="{{ .RelPermalink }}">
+            <img
+              src="{{ .RelPermalink }}"
+              alt=""
+              loading="lazy"
+              decoding="async"
+              class="project__gallery-img">
+          </a>
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+
+</article>
+
+{{ end }}

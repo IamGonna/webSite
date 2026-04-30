@@ -1,0 +1,52 @@
+<header class="site-header">
+  <div class="container">
+    <div class="site-header__bar">
+      <a class="site-logo" href="{{ "/" | relLangURL }}">{{ .Site.Title }}</a>
+
+      <nav class="site-nav" aria-label="Menu principal">
+        <ul class="site-nav__list" data-nav-list>
+          {{ $lang := .Site.Language.Lang }}
+          {{ $menu := index site.Data.menus (printf "menu.%s" $lang) }}
+
+          {{ if and $menu $menu.main }}
+            {{ range sort $menu.main "weight" "asc" }}
+              <li class="site-nav__item">
+                <a class="site-nav__link" href="{{ .url | relLangURL }}">{{ .name }}</a>
+              </li>
+            {{ end }}
+          {{ end }}
+        </ul>
+      </nav>
+
+      <div class="theme-switcher">
+        <button
+          class="theme-switcher__toggle"
+          type="button"
+          aria-label="Ouvrir les options de thème"
+          aria-expanded="false"
+          data-theme-toggle>
+          Thème
+        </button>
+
+        <div class="theme-switcher__inner">
+          <label class="theme-switcher__label" for="theme-select">Theme</label>
+          <select id="theme-select" class="theme-switcher__select" data-theme-select>
+            <option value="light">Light</option>
+            <option value="soft">Soft</option>
+            <option value="contrast">Contrast</option>
+            <option value="dark">Dark</option>
+          </select>
+        </div>
+      </div>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Ouvrir le menu"
+        aria-expanded="false"
+        data-nav-toggle>
+        Menu
+      </button>
+    </div>
+  </div>
+</header>

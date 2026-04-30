@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}" data-theme="light">
+  <head>
+    <script>
+      (function () {
+        try {
+          var theme = localStorage.getItem("gab-theme");
+          if (theme) {
+            document.documentElement.setAttribute("data-theme", theme);
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    {{ $base := resources.Get "css/base.css" }}
+    {{ $themes := resources.Get "css/themes.css" }}
+    {{ $layout := resources.Get "css/layout.css" }}
+    {{ $header := resources.Get "css/header.css" }}
+    {{ $grid := resources.Get "css/grid.css" }}
+    {{ $project := resources.Get "css/project.css" }}
+    {{ $pages := resources.Get "css/pages.css" }}
+
+    {{ $css := slice $base $themes $layout $header $grid $project $pages | resources.Concat "css/main.css" | resources.Minify | resources.Fingerprint }}
+
+    {{ partial "head.html" . }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+  </head>
+  <body>
+    {{ partial "header.html" . }}
+
+    <main class="main-content">
+      <div class="container">
+        {{ block "main" . }}{{ end }}
+      </div>
+    </main>
+
+    {{ partial "footer.html" . }}
+    <script async src="https://www.instagram.com/embed.js"></script>
+    <script src="{{ "js/header.js" | relURL }}" defer></script>
+  </body>
+</html>

@@ -1,0 +1,365 @@
+/* Project page */
+.project{
+  max-width: 760px;
+}
+
+.project__header{
+  padding: 22px 0 10px;
+}
+
+.project__title{
+  margin: 0;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 1.1;
+  letter-spacing: 1px;
+}
+
+.project__tags{
+  margin: 10px 0 0;
+  opacity: 0.9;
+}
+
+.tag{
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--tag-bg);
+}
+
+.project__cover{
+  margin: 30px auto 30px;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+}
+
+.project__img{
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border-radius: 18px;
+}
+
+.project__content{
+  max-width: 70ch;
+}
+
+.project__video-fallback{
+  margin: 10px 0 0;
+}
+
+/* pour les tags */
+.tag-list{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 12px 0 28px;
+}
+
+.tag-chip{
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: var(--tag-bg);
+  color: var(--text);
+  font-weight: 700;
+  box-shadow: 0 6px 18px var(--shadow);
+}
+
+.tag-chip:hover{
+  transform: translateY(-1px);
+}
+
+/* Modification présentation projet */
+.project__intro{
+  max-width: 70ch;
+  opacity: 0.9;
+}
+
+.project__section-title{
+  margin: 28px 0 14px;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: clamp(24px, 3vw, 32px);
+  line-height: 1.5;
+}
+
+.project__gallery-grid{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 18px;
+}
+
+@media (min-width: 700px){
+  .project__gallery-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px){
+  .project__gallery-grid{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.project__gallery-item{
+  display: block;
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 28px var(--shadow);
+}
+
+.project__gallery-img{
+  display: block;
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+.project__video-list{
+  display: grid;
+  gap: 18px;
+  margin-top: 12px;
+}
+
+.project__video{
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 10px 28px var(--shadow);
+  background: #000;
+}
+
+/* section reels */
+.project__social-card{
+  padding: 18px 20px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.04);
+  box-shadow: 0 10px 28px var(--shadow);
+}
+
+.project__social-label{
+  margin: 0 0 10px;
+  font-weight: 700;
+}
+
+.project__embed--instagram{
+  max-width: 640px;
+  margin: 30px auto;
+}
+
+.project__embed--instagram .instagram-media{
+  border-radius: 18px !important;
+  overflow: hidden !important;
+}
+
+.project__video-fallback{
+  margin: 12px 0 0;
+}
+
+/* digital-comic */
+.digital-comic-card{
+  display: grid;
+  grid-template-columns: minmax(220px, 340px) 1fr;
+  gap: 28px;
+  margin: 32px 0;
+  padding: 20px;
+  border-radius: 24px;
+  background: var(--surface);
+  box-shadow: 0 12px 34px var(--shadow);
+  align-items: center;
+}
+
+@media (max-width: 900px){
+  .digital-comic-card{
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+}
+
+.digital-comic-card__media{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.04);
+  overflow: hidden;
+  position: relative;
+}
+
+.digital-comic-card__media-link{
+  display: block;
+  position: relative;
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.digital-comic-card__img{
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  object-fit: contain;
+  border-radius: 18px;
+  margin: 0 auto;
+}
+
+.digital-comic-card__media-overlay{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(28px, 3vw, 42px);
+  letter-spacing: 0.06em;
+  color: #fff;
+  background: rgba(0,0,0,0.38);
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+
+.digital-comic-card__media-link:hover .digital-comic-card__media-overlay{
+  opacity: 1;
+}
+
+.digital-comic-card__content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.digital-comic-card__episode{
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  opacity: 0.85;
+}
+
+.digital-comic-card__title{
+  margin: 0;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(34px, 4vw, 58px);
+  line-height: 1;
+  letter-spacing: 0.03em;
+}
+
+.digital-comic-card__excerpt{
+  margin: 0;
+  max-width: 46ch;
+  line-height: 1.6;
+}
+
+.digital-comic-card__actions{
+  margin: 6px 0 0;
+}
+
+.digital-comic-card__button{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 20px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 10px 24px var(--shadow);
+  transition: transform .15s ease, opacity .15s ease;
+}
+
+.digital-comic-card__button:hover{
+  transform: translateY(-1px);
+  opacity: 0.96;
+}
+
+/* Videos */
+.video-embed{
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  margin: 28px 0;
+}
+
+.video-embed iframe,
+.video-embed video{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  box-shadow: 0 10px 28px var(--shadow);
+  background: #000;
+}
+
+/* affichages images */
+.project__sequence{
+  margin: 28px 0 0;
+}
+
+.project__sequence-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 220px));
+  gap: 14px;
+  justify-content: start;
+  align-items: start;
+}
+
+.project__sequence-item{
+  display: block;
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px var(--shadow);
+  background: var(--surface);
+}
+
+.project__sequence-item img{
+  display: block;
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 14px;
+  transition: transform .2s ease;
+}
+
+.project__sequence-item:hover img{
+  transform: scale(1.04);
+}
+
+/* affichage digital comic */
+.project__comic{
+  margin: 40px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.project__comic-stack{
+  width: 80%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.project__comic-img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+}
+
+@media (max-width: 900px){
+  .project__comic-stack{
+    width: 92%;
+  }
+}

@@ -1,0 +1,37 @@
+{{ $youtube := .Get "youtube" }}
+{{ $vimeo := .Get "vimeo" }}
+{{ $mp4 := .Get "mp4" }}
+{{ $webm := .Get "webm" }}
+
+<div class="video-embed">
+
+{{ if $youtube }}
+<iframe
+  src="https://www.youtube.com/embed/{{ $youtube }}"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+  loading="lazy">
+</iframe>
+
+{{ else if $vimeo }}
+<iframe
+  src="https://player.vimeo.com/video/{{ $vimeo }}"
+  frameborder="0"
+  allow="autoplay; fullscreen; picture-in-picture"
+  allowfullscreen
+  loading="lazy">
+</iframe>
+
+{{ else if $mp4 }}
+<video controls preload="metadata">
+  <source src="{{ $mp4 | relURL }}" type="video/mp4">
+</video>
+
+{{ else if $webm }}
+<video controls preload="metadata">
+  <source src="{{ $webm | relURL }}" type="video/webm">
+</video>
+{{ end }}
+
+</div>

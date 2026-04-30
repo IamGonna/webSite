@@ -1,0 +1,72 @@
+{{ $p := . }}
+
+{{ $coverLocal := "" }}
+{{ range $p.Resources.ByType "image" }}
+  {{ if strings.HasPrefix .Name "cover" }}
+    {{ $coverLocal = . }}
+    {{ break }}
+  {{ end }}
+{{ end }}
+
+{{ $coverRemote := $p.Params.cover }}
+{{ $webtoon := $p.Params.webtoon_url }}
+
+<section class="digital-comic">
+
+  <div class="digital-comic__inner">
+
+    {{ if or $coverLocal $coverRemote }}
+    <a
+      class="digital-comic__media"
+      href="{{ $webtoon }}"
+      target="_blank"
+      rel="noopener">
+
+      {{ if $coverLocal }}
+        <img
+          src="{{ $coverLocal.RelPermalink }}"
+          alt="{{ $p.Title }}"
+          loading="lazy"
+          decoding="async">
+      {{ else if $coverRemote }}
+        <img
+          src="{{ $coverRemote }}"
+          alt="{{ $p.Title }}"
+          loading="lazy"
+          decoding="async">
+      {{ end }}
+
+      <span class="digital-comic__overlay">
+        Lire sur Webtoon
+      </span>
+
+    </a>
+    {{ end }}
+
+    <div class="digital-comic__content">
+
+      {{ with $p.Params.episode_title }}
+        <p class="digital-comic__episode">{{ . }}</p>
+      {{ end }}
+
+      <h2 class="digital-comic__title">{{ $p.Title }}</h2>
+
+      {{ with $p.Params.excerpt }}
+        <p class="digital-comic__excerpt">{{ . }}</p>
+      {{ end }}
+
+      {{ with $webtoon }}
+        <a
+          class="digital-comic__button"
+          href="{{ . }}"
+          target="_blank"
+          rel="noopener">
+          Lire l’épisode complet
+        </a>
+      {{ end }}
+
+    </div>
+
+  </div>
+
+</section>

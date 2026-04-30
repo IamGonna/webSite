@@ -1,0 +1,28 @@
+name: Deploy GAB
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout private repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to VPS
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.GAB_VPS_SSH_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -p 54321 -H "${{ secrets.GAB_VPS_HOST }}" >> ~/.ssh/known_hosts
+
+          rsync -az --delete \
+            --exclude ".git" \
+            --exclude ".github" \
+            -e "ssh -p 54321 -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes" \
+            ./ \
+            gitgabpull@${{ secrets.GAB_VPS_HOST }}:/home/docker/web/gab/html/

@@ -1,0 +1,58 @@
+.
+├── arbo.txt
+├── archetypes
+│   └── default.md
+├── assets
+│   ├── css
+│   │   └── main.css
+│   ├── fonts
+│   │   ├── BebasNeue-Regular.woff2
+│   │   └── Inter-SemiBold.woff2
+│   └── js
+│       └── main.js
+├── content
+│   ├── _index.md
+│   └── posts
+│       ├── _index.md
+│       ├── post-1.md
+│       ├── post-2.md
+│       └── post-3
+│           ├── bryce-canyon.jpg
+│           └── index.md
+├── data
+├── hugo.toml
+├── i18n
+├── layouts
+│   ├── baseof.html
+│   ├── _default
+│   │   ├── section.html
+│   │   ├── single.html
+│   │   ├── taxonomy.html
+│   │   └── term.html
+│   ├── home.html
+│   ├── home.html.back
+│   ├── index.html
+│   ├── page.html.bak
+│   ├── _partials
+│   │   ├── footer.html
+│   │   ├── head
+│   │   │   ├── css.html
+│   │   │   └── js.html
+│   │   ├── header.html
+│   │   ├── head.html
+│   │   ├── img.html
+│   │   ├── menu.html
+│   │   ├── terms.html
+│   │   └── tile.html
+│   ├── projects
+│   │   ├── single.html.back
+│   │   └── single.html.bak
+│   ├── section.html.bak
+│   ├── shortcodes
+│   │   └── video.html
+│   ├── taxonomy.html
+│   └── term.html
+└── static
+    └── favicon.ico
+
+17 directories, 38 files
