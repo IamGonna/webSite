@@ -3,7 +3,7 @@ name: Deploy GAB
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
@@ -13,7 +13,16 @@ jobs:
       - name: Checkout private repository
         uses: actions/checkout@v4
 
-      - name: Deploy to VPS
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: latest
+          extended: true
+
+      - name: Build Hugo site
+        run: hugo --minify
+
+      - name: Deploy public folder to VPS
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.GAB_VPS_SSH_KEY }}" > ~/.ssh/id_ed25519
@@ -21,8 +30,6 @@ jobs:
           ssh-keyscan -p 54321 -H "${{ secrets.GAB_VPS_HOST }}" >> ~/.ssh/known_hosts
 
           rsync -az --delete \
-            --exclude ".git" \
-            --exclude ".github" \
             -e "ssh -p 54321 -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes" \
-            ./ \
+            public/ \
             gitgabpull@${{ secrets.GAB_VPS_HOST }}:/home/docker/web/gab/html/
