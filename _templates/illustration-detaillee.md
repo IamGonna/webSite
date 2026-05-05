@@ -4,6 +4,7 @@ const DEFAULT_TAG = "illustration";
 const IMAGE_EXTENSIONS = ["jpg", "jpeg", "png", "webp"];
 
 const modalForm = app.plugins.plugins["modalforms"]?.api;
+
 if (!modalForm) {
   new Notice("Plugin Modal Forms introuvable");
   tR = "";
@@ -11,6 +12,7 @@ if (!modalForm) {
 }
 
 const result = await modalForm.openForm(FORM_NAME);
+
 if (!result) {
   new Notice("Formulaire annulé");
   tR = "";
@@ -72,13 +74,7 @@ const thumbnail = cover ?? "cover.jpg";
 const sequenceBlock = sequenceImages.length
   ? `## Sequence
 
-<div class="sequence-grid">
-
-${sequenceImages.map(img => `<a href="./${img}" target="_blank" rel="noopener">
-  <img src="./${img}" alt="${escapeYaml(title)}">
-</a>`).join("\n\n")}
-
-</div>`
+${sequenceImages.map(img => `[![${title}](./${img})](./${img})`).join(" ")}`
   : "";
 
 tR = `---
@@ -94,9 +90,6 @@ thumbnail: "${escapeYaml(thumbnail)}"
 ---
 
 ${sequenceBlock}
-
-## Résumé
-${description}
 
 ## Explication
 ${explication}
