@@ -169,3 +169,27 @@
   position: relative;
   z-index: 1;
 }
+
+/*Spécifique pour les illustrations détaillées*/
+.sequence-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+
+.sequence-grid a {
+  display: block;
+  width: 180px;
+  max-width: 45vw;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #222;
+}
+
+.sequence-grid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}

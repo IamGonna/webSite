@@ -4,7 +4,6 @@ const DEFAULT_TAG = "illustration";
 const IMAGE_EXTENSIONS = ["jpg", "jpeg", "png", "webp"];
 
 const modalForm = app.plugins.plugins["modalforms"]?.api;
-
 if (!modalForm) {
   new Notice("Plugin Modal Forms introuvable");
   tR = "";
@@ -12,7 +11,6 @@ if (!modalForm) {
 }
 
 const result = await modalForm.openForm(FORM_NAME);
-
 if (!result) {
   new Notice("Formulaire annulé");
   tR = "";
@@ -45,9 +43,7 @@ function fileExists(path) {
 function findImage(baseName) {
   for (const ext of IMAGE_EXTENSIONS) {
     const path = `${currentFolder}/${baseName}.${ext}`;
-    if (fileExists(path)) {
-      return `${baseName}.${ext}`;
-    }
+    if (fileExists(path)) return `${baseName}.${ext}`;
   }
   return null;
 }
@@ -62,7 +58,6 @@ for (let i = 1; i <= 99; i++) {
   if (img) sequenceImages.push(img);
 }
 
-// IMPORTANT pour Hugo Page Bundle
 await tp.file.rename("index.fr");
 
 const tagsYaml = tagsInput
@@ -74,14 +69,16 @@ const tagsYaml = tagsInput
 
 const thumbnail = cover ?? "cover.jpg";
 
-const coverBlock = cover
-  ? `![${title}](./${cover})`
-  : `> ⚠️ Merci de mettre une image nommée \`cover.jpg\`, \`cover.jpeg\`, \`cover.png\` ou \`cover.webp\` dans le même répertoire.`;
-
 const sequenceBlock = sequenceImages.length
   ? `## Sequence
 
-${sequenceImages.map(img => `![${title}](./${img})`).join("\n\n")}`
+<div class="sequence-grid">
+
+${sequenceImages.map(img => `<a href="./${img}" target="_blank" rel="noopener">
+  <img src="./${img}" alt="${escapeYaml(title)}">
+</a>`).join("\n\n")}
+
+</div>`
   : "";
 
 tR = `---
@@ -95,8 +92,6 @@ ${tagsYaml || `  - "${DEFAULT_TAG}"`}
 description: "${escapeYaml(description)}"
 thumbnail: "${escapeYaml(thumbnail)}"
 ---
-
-${coverBlock}
 
 ${sequenceBlock}
 
