@@ -1,7 +1,6 @@
 <%*
 const FORM_NAME = "illustration-detaillee";
 const DEFAULT_TAG = "illustration";
-const IMAGE_BASENAME = "cover";
 const IMAGE_EXTENSIONS = ["jpg", "jpeg", "png", "webp"];
 
 const modalForm = app.plugins.plugins["modalforms"]?.api;
@@ -37,34 +36,45 @@ if (!title) {
 
 const currentFolder = tp.file.folder(true);
 
-// Recherche automatique de cover.jpg / jpeg / png / webp
-let imagePath = "";
-let imageExists = false;
+const escapeYaml = (value) => String(value ?? "").replace(/"/g, '\\"');
 
-for (const ext of IMAGE_EXTENSIONS) {
-  const path = currentFolder
-    ? `${currentFolder}/${IMAGE_BASENAME}.${ext}`
-    : `${IMAGE_BASENAME}.${ext}`;
+function fileExists(path) {
+  return !!app.vault.getAbstractFileByPath(path);
+}
 
-  const file = app.vault.getAbstractFileByPath(path);
+function findImage(baseName) {
+  for (const ext of IMAGE_EXTENSIONS) {
+    const path = currentFolder ? `${currentFolder}/${baseName}.${ext}` : `${baseName}.${ext}`;
+    if (fileExists(path)) {
+      return {
+        path,
+        fileName: `${baseName}.${ext}`
+      };
+    }
+  }
+  return null;
+}
 
-  if (file) {
-    imagePath = path;
-    imageExists = true;
-    break;
+// Image principale
+const cover = findImage("cover");
+
+if (!cover) {
+  new Notice("Merci d’ajouter une image cover.jpg/jpeg/png/webp dans le dossier");
+}
+
+// Images de séquence : 01.jpg, 02.jpg, 03.jpg...
+let sequenceImages = [];
+
+for (let i = 1; i <= 99; i++) {
+  const number = String(i).padStart(2, "0");
+  const image = findImage(number);
+
+  if (image) {
+    sequenceImages.push(image);
   }
 }
 
-// Si aucune image n’existe encore, on prépare le chemin attendu
-if (!imagePath) {
-  imagePath = currentFolder
-    ? `${currentFolder}/${IMAGE_BASENAME}.jpg`
-    : `${IMAGE_BASENAME}.jpg`;
-}
-
 await tp.file.rename(title);
-
-const escapeYaml = (value) => String(value ?? "").replace(/"/g, '\\"');
 
 const tagsYaml = tagsInput
   .split(",")
@@ -73,9 +83,21 @@ const tagsYaml = tagsInput
   .map(t => `  - "${escapeYaml(t)}"`)
   .join("\n");
 
-const imageBlock = imageExists
-  ? `![[${imagePath}]]`
+const thumbnail = cover ? cover.fileName : "cover.jpg";
+
+const coverBlock = cover
+  ? `![${title}](${cover.fileName})`
   : `> ⚠️ Merci de mettre une image nommée \`cover.jpg\`, \`cover.jpeg\`, \`cover.png\` ou \`cover.webp\` dans le même répertoire pour finaliser la publication.`;
+
+const sequenceBlock = sequenceImages.length
+  ? `## Sequence
+
+<div class="sequence-grid">
+
+${sequenceImages.map(img => `<img src="${img.fileName}" alt="${title}">`).join("\n")}
+
+</div>`
+  : "";
 
 tR = `---
 title: "${escapeYaml(title)}"
@@ -86,18 +108,19 @@ type: "illustration"
 tags:
 ${tagsYaml || `  - "${DEFAULT_TAG}"`}
 description: "${escapeYaml(description)}"
-thumbnail: "${escapeYaml(imagePath)}"
+thumbnail: "${escapeYaml(thumbnail)}"
 ---
 
 # ${title}
+
+${coverBlock}
+
+${sequenceBlock}
 
 ## Résumé
 ${description}
 
 ## Explication
 ${explication}
-
-## Illustration
-${imageBlock}
 `;
 %>
