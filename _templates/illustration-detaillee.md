@@ -44,37 +44,26 @@ function fileExists(path) {
 
 function findImage(baseName) {
   for (const ext of IMAGE_EXTENSIONS) {
-    const path = currentFolder ? `${currentFolder}/${baseName}.${ext}` : `${baseName}.${ext}`;
+    const path = `${currentFolder}/${baseName}.${ext}`;
     if (fileExists(path)) {
-      return {
-        path,
-        fileName: `${baseName}.${ext}`
-      };
+      return `${baseName}.${ext}`;
     }
   }
   return null;
 }
 
-// Image principale
 const cover = findImage("cover");
 
-if (!cover) {
-  new Notice("Merci d’ajouter une image cover.jpg/jpeg/png/webp dans le dossier");
-}
-
-// Images de séquence : 01.jpg, 02.jpg, 03.jpg...
 let sequenceImages = [];
 
 for (let i = 1; i <= 99; i++) {
   const number = String(i).padStart(2, "0");
-  const image = findImage(number);
-
-  if (image) {
-    sequenceImages.push(image);
-  }
+  const img = findImage(number);
+  if (img) sequenceImages.push(img);
 }
 
-await tp.file.rename(title);
+// IMPORTANT pour Hugo Page Bundle
+await tp.file.rename("index.fr");
 
 const tagsYaml = tagsInput
   .split(",")
@@ -83,20 +72,16 @@ const tagsYaml = tagsInput
   .map(t => `  - "${escapeYaml(t)}"`)
   .join("\n");
 
-const thumbnail = cover ? cover.fileName : "cover.jpg";
+const thumbnail = cover ?? "cover.jpg";
 
 const coverBlock = cover
-  ? `![${title}](${cover.fileName})`
-  : `> ⚠️ Merci de mettre une image nommée \`cover.jpg\`, \`cover.jpeg\`, \`cover.png\` ou \`cover.webp\` dans le même répertoire pour finaliser la publication.`;
+  ? `![${title}](./${cover})`
+  : `> ⚠️ Merci de mettre une image nommée \`cover.jpg\`, \`cover.jpeg\`, \`cover.png\` ou \`cover.webp\` dans le même répertoire.`;
 
 const sequenceBlock = sequenceImages.length
   ? `## Sequence
 
-<div class="sequence-grid">
-
-${sequenceImages.map(img => `<img src="${img.fileName}" alt="${title}">`).join("\n")}
-
-</div>`
+${sequenceImages.map(img => `![${title}](./${img})`).join("\n\n")}`
   : "";
 
 tR = `---
@@ -110,8 +95,6 @@ ${tagsYaml || `  - "${DEFAULT_TAG}"`}
 description: "${escapeYaml(description)}"
 thumbnail: "${escapeYaml(thumbnail)}"
 ---
-
-# ${title}
 
 ${coverBlock}
 
