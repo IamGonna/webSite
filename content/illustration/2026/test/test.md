@@ -20,4 +20,3 @@ test
 
 ## Illustration
 ![[content/illustration/2026/test/cover.jpg]]
-![[1012761.jpg|257]]![[content/illustration/2026/test/97167-1532336916.jpg|258]]
