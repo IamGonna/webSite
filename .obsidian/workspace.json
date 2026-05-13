@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/illustration/2026/Concept_art_staircase_3/index.fr.md",
-                "mode": "preview",
+                "file": "content/illustration/2026/Animation_VDR/Animation Project - La Vallée des Rois.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index.fr"
+              "title": "Animation Project - La Vallée des Rois"
             }
           }
         ]
@@ -265,12 +265,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "598cfbfbf8d31d17",
+  "active": "517db24aae81433e",
   "lastOpenFiles": [
+    "content/illustration/2026/Concept_art_staircase_3/index.fr.md",
+    "content/illustration/2026/Animation_VDR/Animation Project - La Vallée des Rois.md",
+    "content/illustration/2026/Animation_VDR",
     "content/illustration/2026/Concept_art_staircase_1/concept_art_staircase_shot_1.png",
     "content/illustration/2026/Concept_art_staircase_3/concept_art_staircase_shot_3.png",
     "content/illustration/2026/Concept_art_staircase_1/index.fr.md",
-    "content/illustration/2026/Concept_art_staircase_3/index.fr.md",
     "content/illustration/2026/Concept_art_staircase_3/cover.png",
     "_templates/illustration-simple.md",
     "_templates/illustration-detaillee.md",
@@ -295,14 +297,12 @@
     "_templates/scripts/test.md",
     "content/animation/2026/test/test.md",
     "public/fr/animation/2026/test/97167-1532336916.jpg",
-    "content/animation/2026/test/97167-1532336916.jpg",
     "content/digital-comic/2026/test nouveau format affichage/index.fr.md",
     "public/fr/animation/2026/test/test/index.html",
     "public/fr/animation/2026/test/test",
     "content/animation/2026/validation des templates/index.fr.md",
     "public/fr/animation/2026/test/untitled/index.html",
     "public/fr/animation/2026/test/untitled",
-    "public/fr/animation/2026/test",
     "content/animation/2026/20260407/Untitled.md",
     "content/digital-comic/2026/test webtoon/index.fr.md",
     "_templates/animation-detaillee.md",
