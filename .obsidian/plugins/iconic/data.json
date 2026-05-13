@@ -1,0 +1,167 @@
+{
+  "biggerIcons": "mobile",
+  "clickableIcons": "desktop",
+  "showAllFileIcons": true,
+  "showAllFolderIcons": true,
+  "minimalFolderIcons": true,
+  "showMarkdownTabIcons": true,
+  "showTitleIcons": true,
+  "showTagPillIcons": true,
+  "showMenuActions": true,
+  "showSuggestionIcons": true,
+  "showQuickSwitcherIcons": true,
+  "showMoveFileIcons": true,
+  "showItemName": "desktop",
+  "biggerSearchResults": "mobile",
+  "maxSearchResults": 50,
+  "colorPicker1": "list",
+  "colorPicker2": "rgb",
+  "uncolorHover": false,
+  "uncolorDrag": false,
+  "uncolorSelect": false,
+  "uncolorQuick": false,
+  "rememberDeletedItems": false,
+  "maxBackups": 5,
+  "dialogState": {
+    "iconMode": true,
+    "emojiMode": false,
+    "rulePage": "file"
+  },
+  "appIcons": {},
+  "tabIcons": {},
+  "fileIcons": {
+    "archetypes": {
+      "color": "red",
+      "unsynced": [
+        "13f4215323ef336f"
+      ]
+    },
+    "assets": {
+      "color": "red",
+      "unsynced": [
+        "13f4215323ef336f"
+      ]
+    },
+    "content": {
+      "icon": "lucide-book-open",
+      "color": "green",
+      "unsynced": [
+        "13f4215323ef336f"
+      ]
+    },
+    "data": {
+      "color": "red",
+      "unsynced": [
+        "13f4215323ef336f"
+      ]
+    },
+    "i18n": {
+      "color": "red",
+      "unsynced": [
+        "13f4215323ef336f"
+      ]
+    },
+    "layouts": {
+      "color": "red",
+      "unsynced": [
+        "13f4215323ef336f"
+      ]
+    },
+    "public": {
+      "color": "red",
+      "unsynced": [
+        "13f4215323ef336f"
+      ]
+    },
+    "resources": {
+      "color": "red",
+      "unsynced": [
+        "13f4215323ef336f"
+      ]
+    },
+    "static": {
+      "color": "red",
+      "unsynced": [
+        "13f4215323ef336f"
+      ]
+    },
+    "themes": {
+      "color": "orange",
+      "unsynced": [
+        "13f4215323ef336f"
+      ]
+    },
+    "themes/gab-theme": {
+      "color": "orange",
+      "unsynced": [
+        "13f4215323ef336f"
+      ]
+    },
+    "themes/gab-theme/archetypes": {
+      "color": "red",
+      "unsynced": [
+        "13f4215323ef336f"
+      ]
+    },
+    "themes/gab-theme/assets": {
+      "color": "orange",
+      "unsynced": [
+        "13f4215323ef336f"
+      ]
+    },
+    "themes/gab-theme/assets/css": {
+      "color": "yellow",
+      "unsynced": [
+        "13f4215323ef336f"
+      ]
+    },
+    "themes/gab-theme/assets/fonts": {
+      "color": "green",
+      "unsynced": [
+        "13f4215323ef336f"
+      ]
+    },
+    "themes/gab-theme/assets/js": {
+      "color": "orange",
+      "unsynced": [
+        "13f4215323ef336f"
+      ]
+    },
+    "themes/gab-theme/content": {
+      "color": "red",
+      "unsynced": [
+        "13f4215323ef336f"
+      ]
+    },
+    "themes/gab-theme/data": {
+      "color": "red",
+      "unsynced": [
+        "13f4215323ef336f"
+      ]
+    },
+    "themes/gab-theme/i18n": {
+      "color": "red",
+      "unsynced": [
+        "13f4215323ef336f"
+      ]
+    },
+    "themes/gab-theme/layouts": {
+      "color": "red",
+      "unsynced": [
+        "13f4215323ef336f"
+      ]
+    },
+    "themes/gab-theme/static": {
+      "color": "red",
+      "unsynced": [
+        "13f4215323ef336f"
+      ]
+    }
+  },
+  "bookmarkIcons": {},
+  "tagIcons": {},
+  "propertyIcons": {},
+  "ribbonIcons": {},
+  "fileRules": [],
+  "folderRules": []
+}

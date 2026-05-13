@@ -363,3 +363,30 @@
     width: 92%;
   }
 }
+
+/*ajout pour illustration*/
+
+.project__content h2 + p:has(a img) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 16px 0 32px;
+}
+
+.project__content h2 + p:has(a img) a {
+  display: block;
+  width: 180px;
+  max-width: 45vw;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px var(--shadow);
+  background: var(--surface);
+}
+
+.project__content h2 + p:has(a img) img {
+  display: block;
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 14px;
+}

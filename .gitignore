@@ -4,7 +4,6 @@ resources/_gen/
 .hugo_build.lock
 
 # Obsidian / local notes
-.obsidian/
 .trash/
 .modal-forms/
 

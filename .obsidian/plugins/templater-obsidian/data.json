@@ -1,0 +1,46 @@
+{
+  "command_timeout": 240,
+  "templates_folder": "_templates",
+  "templates_pairs": [
+    [
+      "video_preview",
+      "\"/mnt/datas/01-dev/web/gab-web/video_preview_webm.sh\" \"$url\" \"$start\" \"$dur\" \"$out\"\"$dur\" \"$out\""
+    ],
+    [
+      "",
+      ""
+    ]
+  ],
+  "trigger_on_file_creation": true,
+  "auto_jump_to_cursor": true,
+  "enable_system_commands": true,
+  "shell_path": "",
+  "user_scripts_folder": "_templates/scripts",
+  "enable_folder_templates": false,
+  "folder_templates": [
+    {
+      "folder": "content/animation",
+      "template": "_templates/animation-menu.md"
+    },
+    {
+      "folder": "",
+      "template": ""
+    }
+  ],
+  "enable_file_templates": false,
+  "file_templates": [
+    {
+      "regex": ".*",
+      "template": ""
+    }
+  ],
+  "syntax_highlighting": true,
+  "syntax_highlighting_mobile": false,
+  "enabled_templates_hotkeys": [
+    ""
+  ],
+  "startup_templates": [
+    ""
+  ],
+  "intellisense_render": 1
+}
