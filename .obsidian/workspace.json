@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/illustration/2026/Concept_art_staircase_1/index.fr.md",
+                "file": "content/illustration/2026/Concept_art_staircase_3/index.fr.md",
                 "mode": "preview",
                 "source": false
               },
@@ -265,13 +265,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5931386f4dbaa41e",
+  "active": "598cfbfbf8d31d17",
   "lastOpenFiles": [
+    "content/illustration/2026/Concept_art_staircase_1/concept_art_staircase_shot_1.png",
+    "content/illustration/2026/Concept_art_staircase_3/concept_art_staircase_shot_3.png",
+    "content/illustration/2026/Concept_art_staircase_1/index.fr.md",
     "content/illustration/2026/Concept_art_staircase_3/index.fr.md",
     "content/illustration/2026/Concept_art_staircase_3/cover.png",
     "_templates/illustration-simple.md",
     "_templates/illustration-detaillee.md",
-    "content/illustration/2026/Concept_art_staircase_1/index.fr.md",
     "content/illustration/2026/projet-demo-payasage/index.fr.md",
     "content/illustration/2026/Concept_art_staircase_3/Untitled.md",
     "content/illustration/2026/Concept_art_staircase_1/cover.png",
@@ -302,7 +304,6 @@
     "public/fr/animation/2026/test/untitled",
     "public/fr/animation/2026/test",
     "content/animation/2026/20260407/Untitled.md",
-    "content/animation/2026/validation des templates/01.jpg",
     "content/digital-comic/2026/test webtoon/index.fr.md",
     "_templates/animation-detaillee.md",
     "_templates/animation-simple.md",
