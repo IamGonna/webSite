@@ -11,7 +11,7 @@
           "name": "vidéo simple",
           "type": "Template",
           "command": false,
-          "templatePath": "_templates/animation-video-simple.md",
+          "templatePath": "_templates/animation-simple.md",
           "fileNameFormat": {
             "enabled": false,
             "format": "index-fr"
@@ -41,7 +41,7 @@
           "name": "video avec détail",
           "type": "Template",
           "command": false,
-          "templatePath": "_templates/animation-video-detaillee.md",
+          "templatePath": "_templates/animation-detaillee.md",
           "fileNameFormat": {
             "enabled": false,
             "format": "index-fr"

@@ -61,7 +61,7 @@ if (!imagePath) {
     : `${IMAGE_BASENAME}.jpg`;
 }
 
-await tp.file.rename("index.fr");
+await tp.file.rename(title);
 
 const escapeYaml = (value) => String(value ?? "").replace(/"/g, '\\"');
 
