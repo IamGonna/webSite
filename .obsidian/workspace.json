@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/animation/2026/Animation_VDR/La Vallée des Rois.md",
+                "file": "content/animation/2026/Animation_VDR/index.fr.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "La Vallée des Rois"
+              "title": "index.fr"
             }
           }
         ]
@@ -265,14 +265,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "598cfbfbf8d31d17",
+  "active": "0d918f2e9f4f955d",
   "lastOpenFiles": [
     "content/animation/2026/Animation_VDR/preview_5s.webm",
-    "content/animation/2026/Animation_VDR/La Vallée des Rois.md",
-    "content/animation/2026/Animation_VDR/truc.md",
-    "content/animation/2026/mon test vimeo/index.fr.md",
     "content/animation/2026/mon test vimeo/preview_5s.webm",
     "content/animation/2026/validation des templates/index.fr.md",
+    "content/animation/2026/mon test vimeo/index.fr.md",
+    "content/animation/2026/Animation_VDR/index.fr.md",
+    "content/animation/2026/Animation_VDR/truc.md",
     "content/reel/2026/mars/test instagram/index.fr.md",
     "video_preview_webm.sh.bak",
     "content/illustration/2026/Concept_art_staircase_2/index.fr.md",
