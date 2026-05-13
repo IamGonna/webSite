@@ -1,11 +1,11 @@
 ---
-title: "Animation Project - La Vallée des Rois"
+title: La Vallée des Rois
 date: 2026-05-13
 draft: false
 featured: true
-type: "animation"
+type: animation
 description: ""
-youtube: "https://youtu.be/21TlRAHpDSg"
+youtube: https://youtu.be/21TlRAHpDSg
 ---
 
 # La Vallée des Rois
