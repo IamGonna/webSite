@@ -8,7 +8,7 @@ description: ""
 youtube: "https://youtu.be/21TlRAHpDSg"
 ---
 
-# Animation Project - La Vallée des Rois
+# La Vallée des Rois
 
 ## Résumé
 
