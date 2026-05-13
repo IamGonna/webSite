@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/illustration/2026/Concept_art_staircase_2/index.fr.md",
+                "file": "content/animation/2026/validation des templates/index.fr.md",
                 "mode": "source",
                 "source": false
               },
@@ -265,12 +265,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0d918f2e9f4f955d",
+  "active": "598cfbfbf8d31d17",
   "lastOpenFiles": [
+    "content/animation/2026/mon test vimeo/index.fr.md",
+    "content/illustration/2026/Concept_art_staircase_2/index.fr.md",
     "content/illustration/2026/Concept_art_staircase_2/concept_art_staircase_shot_2.png",
     "content/illustration/2026/Concept_art_staircase_2/cover.png",
     "content/illustration/2026/Concept_art_staircase_2/truc.md",
-    "content/illustration/2026/Concept_art_staircase_2/index.fr.md",
     "content/illustration/2026/Concept_art_staircase_3/concept_art_staircase_shot_3.png",
     "content/illustration/2026/Concept_art_staircase_3/index.fr.md",
     "content/illustration/2026/Concept_art_staircase_3/cover.png",
@@ -297,7 +298,6 @@
     "_templates/animation-detaillee.md",
     "content/illustration/2026/test/cover.jpg",
     "content/illustration/2026/cage-d-escalier/tes.md",
-    "content/animation/2026/mon test vimeo/index.fr.md",
     "content/animation/2026/mon test vimeo/Untitled.md",
     "content/animation/2026/mon test vimeo/Sans titre.md",
     "_templates/scripts/test.md",
