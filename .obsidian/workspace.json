@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/illustration/2026/Animation_VDR/La Vallée des Rois.md",
+                "file": "content/illustration/2026/Concept_art_staircase_2/index.fr 1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "La Vallée des Rois"
+              "title": "index.fr 1"
             }
           }
         ]
@@ -267,12 +267,17 @@
   },
   "active": "517db24aae81433e",
   "lastOpenFiles": [
-    "content/illustration/2026/Concept_art_staircase_3/index.fr.md",
-    "content/illustration/2026/Animation_VDR/La Vallée des Rois.md",
-    "content/illustration/2026/Animation_VDR",
+    "content/illustration/2026/Concept_art_staircase_2/concept_art_staircase_shot_2.png",
     "content/illustration/2026/Concept_art_staircase_1/concept_art_staircase_shot_1.png",
-    "content/illustration/2026/Concept_art_staircase_3/concept_art_staircase_shot_3.png",
+    "content/illustration/2026/Concept_art_staircase_2/cover.png",
+    "content/illustration/2026/Concept_art_staircase_2/index.fr 1.md",
     "content/illustration/2026/Concept_art_staircase_1/index.fr.md",
+    "content/illustration/2026/Animation_VDR/La Vallée des Rois.md",
+    "content/illustration/2026/Concept_art_staircase_2/Untitled.md",
+    "content/illustration/2026/Concept_art_staircase_2",
+    "content/illustration/2026/Concept_art_staircase_3/index.fr.md",
+    "content/illustration/2026/Animation_VDR",
+    "content/illustration/2026/Concept_art_staircase_3/concept_art_staircase_shot_3.png",
     "content/illustration/2026/Concept_art_staircase_3/cover.png",
     "_templates/illustration-simple.md",
     "_templates/illustration-detaillee.md",
@@ -296,22 +301,17 @@
     "content/reel/2026/mars/test youtube/index.fr.md",
     "_templates/scripts/test.md",
     "content/animation/2026/test/test.md",
-    "public/fr/animation/2026/test/97167-1532336916.jpg",
     "content/digital-comic/2026/test nouveau format affichage/index.fr.md",
     "public/fr/animation/2026/test/test/index.html",
     "public/fr/animation/2026/test/test",
     "content/animation/2026/validation des templates/index.fr.md",
     "public/fr/animation/2026/test/untitled/index.html",
-    "public/fr/animation/2026/test/untitled",
     "content/animation/2026/20260407/Untitled.md",
     "content/digital-comic/2026/test webtoon/index.fr.md",
     "_templates/animation-detaillee.md",
     "_templates/animation-simple.md",
     "content/animation/2026/validation des templates/test anim détaillée.md",
     "content/animation/2026/validation des templates/test détaillé.md",
-    "content/animation/2026/validation des templates/test eric templates.md",
-    "content/animation/2026/test-choix-template/Untitled.md",
-    "content/animation/2026/test-1er-Avril/Sans titre.md",
-    "content/animation/2026/test-1er-Avril/Sans titre 1.md"
+    "content/animation/2026/validation des templates/test eric templates.md"
   ]
 }
