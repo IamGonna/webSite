@@ -89,7 +89,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 743.5
+    "width": 605.5
   },
   "right": {
     "id": "9047f72a0584e7d1",
@@ -243,7 +243,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 852.5
+    "width": 418.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -265,18 +265,23 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0d918f2e9f4f955d",
+  "active": "598cfbfbf8d31d17",
   "lastOpenFiles": [
-    "content/animation/2026/Animation_VDR/preview_5s.webm",
+    "public/en/tags/stitch/index.xml",
+    "public/en/tags/stitch/index.html",
+    "public/en/tags/illustration/index.xml",
+    "public/en/tags/illustration/index.html",
+    "public/en/tags/2d/index.xml",
+    "public/en/tags/2d/index.html",
+    "public/en/tags/stitch",
+    "public/en/tags/index.xml",
+    "public/en/tags/index.html",
+    "public/en/tags/illustration",
+    "public/en/tags/2d",
     "content/animation/2026/Animation_VDR/index.fr.md",
-    "_templates/scripts/XXnwu8Ba",
-    "_templates/XXuZW26n",
     "content/animation/2026/truc/index.fr.md",
-    "content/animation/2026/truc",
     "_templates/animation-detaillee.md",
     "_templates/animation-simple.md",
-    "public/fr/tags/soleil/index.xml",
-    "public/fr/tags/concept_art/index.xml",
     "public/fr/illustration/2026/concept_art_staircase_3/cover_hu_59274d12072eefa.png",
     "public/fr/illustration/2026/concept_art_staircase_3/cover_hu_972794b75bb132e7.png",
     "public/fr/illustration/2026/concept_art_staircase_3/cover_hu_62bc73c11a48dfd6.png",
@@ -287,11 +292,6 @@
     "resources/_gen/images/fr/illustration/2026/concept_art_staircase_3/cover_hu_62bc73c11a48dfd6.png",
     "resources/_gen/images/fr/illustration/2026/concept_art_staircase_3/cover_hu_972794b75bb132e7.png",
     "resources/_gen/images/fr/illustration/2026/concept_art_staircase_3/cover_hu_1d6ab2cea7152678.webp",
-    "resources/_gen/images/fr/illustration/2026/concept_art_staircase_3",
-    "resources/_gen/images/fr/illustration/2026/concept_art_staircase_1",
-    "public/fr/illustration/2026/concept_art_staircase_3/index.html",
-    "public/fr/illustration/2026/concept_art_staircase_2/index.html",
-    "public/fr/illustration/2026/concept_art_staircase_1/index.html",
     "_templates/scripts/test.md",
     "_templates/illustration-simple.md",
     "content/animation/2026/validation des templates/index.fr.md",

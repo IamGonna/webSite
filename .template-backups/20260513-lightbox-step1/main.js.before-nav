@@ -135,76 +135,30 @@
     const links = Array.from(document.querySelectorAll('[data-lightbox-src]'));
     if (!links.length) return;
 
-    const items = links
-      .map((link) => ({
-        src: link.getAttribute('data-lightbox-src') || link.getAttribute('href'),
-        alt: link.querySelector('img')?.alt || '',
-      }))
-      .filter((item) => item.src);
-
-    if (!items.length) return;
-
     const overlay = document.createElement('div');
     overlay.className = 'project-lightbox';
     overlay.hidden = true;
-    overlay.innerHTML = [
-      '<button class="project-lightbox__close" type="button" aria-label="Fermer">×</button>',
-      '<button class="project-lightbox__nav project-lightbox__nav--prev" type="button" aria-label="Image précédente">‹</button>',
-      '<figure class="project-lightbox__figure">',
-      '  <img class="project-lightbox__image" src="" alt="">',
-      '  <figcaption class="project-lightbox__caption"></figcaption>',
-      '</figure>',
-      '<button class="project-lightbox__nav project-lightbox__nav--next" type="button" aria-label="Image suivante">›</button>',
-      '<div class="project-lightbox__thumbs" aria-label="Miniatures de la galerie"></div>',
-    ].join('');
+    overlay.innerHTML = '<button class="project-lightbox__close" type="button" aria-label="Fermer">×</button><img class="project-lightbox__image" src="" alt="">';
     document.body.appendChild(overlay);
 
     const image = overlay.querySelector('.project-lightbox__image');
-    const caption = overlay.querySelector('.project-lightbox__caption');
-    const prevButton = overlay.querySelector('.project-lightbox__nav--prev');
-    const nextButton = overlay.querySelector('.project-lightbox__nav--next');
-    const thumbs = overlay.querySelector('.project-lightbox__thumbs');
-    let currentIndex = 0;
-
-    thumbs.innerHTML = items
-      .map((item, index) => `<button class="project-lightbox__thumb" type="button" aria-label="Afficher l'image ${index + 1}"><img src="${item.src}" alt=""></button>`)
-      .join('');
-
-    const thumbButtons = Array.from(thumbs.querySelectorAll('.project-lightbox__thumb'));
-
-    const show = (index) => {
-      currentIndex = (index + items.length) % items.length;
-      const item = items[currentIndex];
-      image.src = item.src;
-      image.alt = item.alt;
-      caption.textContent = `Image ${currentIndex + 1} / ${items.length}`;
-      thumbButtons.forEach((button, buttonIndex) => {
-        button.classList.toggle('is-active', buttonIndex === currentIndex);
-        button.setAttribute('aria-current', buttonIndex === currentIndex ? 'true' : 'false');
-      });
-      overlay.hidden = false;
-      document.documentElement.classList.add('project-lightbox-open');
-    };
-
     const close = () => {
       overlay.hidden = true;
       image.removeAttribute('src');
       document.documentElement.classList.remove('project-lightbox-open');
     };
 
-    links.forEach((link, index) => {
+    links.forEach((link) => {
       link.addEventListener('click', (event) => {
+        const src = link.getAttribute('data-lightbox-src') || link.getAttribute('href');
+        if (!src) return;
         event.preventDefault();
-        show(index);
+        image.src = src;
+        image.alt = link.querySelector('img')?.alt || '';
+        overlay.hidden = false;
+        document.documentElement.classList.add('project-lightbox-open');
       });
     });
-
-    thumbButtons.forEach((button, index) => {
-      button.addEventListener('click', () => show(index));
-    });
-
-    prevButton.addEventListener('click', () => show(currentIndex - 1));
-    nextButton.addEventListener('click', () => show(currentIndex + 1));
 
     overlay.addEventListener('click', (event) => {
       if (event.target === overlay || event.target.closest('.project-lightbox__close')) {
@@ -213,10 +167,7 @@
     });
 
     document.addEventListener('keydown', (event) => {
-      if (overlay.hidden) return;
-      if (event.key === 'Escape') close();
-      if (event.key === 'ArrowLeft') show(currentIndex - 1);
-      if (event.key === 'ArrowRight') show(currentIndex + 1);
+      if (!overlay.hidden && event.key === 'Escape') close();
     });
   }
 
