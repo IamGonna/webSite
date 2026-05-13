@@ -11,14 +11,12 @@
             "id": "0d918f2e9f4f955d",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "video",
               "state": {
-                "file": "content/animation/2026/validation des templates/index.fr.md",
-                "mode": "source",
-                "source": false
+                "file": "content/illustration/2026/Animation_VDR/preview_5s.webm"
               },
               "icon": "lucide-file",
-              "title": "index.fr"
+              "title": "preview_5s"
             }
           }
         ]
@@ -265,8 +263,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "598cfbfbf8d31d17",
+  "active": "0d918f2e9f4f955d",
   "lastOpenFiles": [
+    "content/reel/2026/mars/test instagram/index.fr.md",
+    "content/illustration/2026/Animation_VDR/preview_5s.webm",
+    "video_preview_webm.sh.bak",
+    "content/animation/2026/validation des templates/index.fr.md",
     "content/animation/2026/mon test vimeo/index.fr.md",
     "content/illustration/2026/Concept_art_staircase_2/index.fr.md",
     "content/illustration/2026/Concept_art_staircase_2/concept_art_staircase_shot_2.png",
@@ -291,7 +293,6 @@
     "_templates/illustration-detaillee.md",
     "_templates/illustration-simple.md",
     "content/illustration/2026/test/test.md",
-    "content/animation/2026/validation des templates/index.fr.md",
     "content/illustration/2026/test/01.jpg",
     "content/illustration/2026/test/cover.jpg",
     "content/illustration/2026/test",
@@ -308,8 +309,6 @@
     "content/illustration/2026/cage-d-escalier/Cage d'escalier.md",
     "content/illustration/2026/cage-d-escalier",
     "test.txt",
-    "content/illustration/2026/Cage d'escalier",
-    "obsidian.zip",
     "content/animation/2026/projet-comparaison-video/index.fr.md",
     "content/reel/2026/mars/test youtube/index.fr.md"
   ]
