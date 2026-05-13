@@ -11,14 +11,12 @@
             "id": "517db24aae81433e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "content/illustration/2026/Concept_art_staircase_1/index.fr.md",
-                "mode": "source",
-                "source": false
+                "file": "content/illustration/2026/Concept_art_staircase_2/cover.png"
               },
-              "icon": "lucide-file",
-              "title": "index.fr"
+              "icon": "lucide-image",
+              "title": "cover"
             }
           }
         ]
@@ -267,16 +265,16 @@
   },
   "active": "517db24aae81433e",
   "lastOpenFiles": [
+    "content/illustration/2026/Concept_art_staircase_2/concept_art_staircase_shot_2.png",
+    "content/illustration/2026/Concept_art_staircase_2/cover.png",
+    "content/illustration/2026/Concept_art_staircase_3/index.fr.md",
+    "content/illustration/2026/Concept_art_staircase_1/index.fr.md",
     "content/illustration/2026/Concept_art_staircase_2/index.fr 1.md",
     "content/illustration/2026/Concept_art_staircase_3/cover.png",
-    "content/illustration/2026/Concept_art_staircase_2/cover.png",
-    "content/illustration/2026/Concept_art_staircase_2/concept_art_staircase_shot_2.png",
     "content/illustration/2026/Concept_art_staircase_1/concept_art_staircase_shot_1.png",
-    "content/illustration/2026/Concept_art_staircase_1/index.fr.md",
     "content/illustration/2026/Animation_VDR/La Vallée des Rois.md",
     "content/illustration/2026/Concept_art_staircase_2/Untitled.md",
     "content/illustration/2026/Concept_art_staircase_2",
-    "content/illustration/2026/Concept_art_staircase_3/index.fr.md",
     "content/illustration/2026/Animation_VDR",
     "content/illustration/2026/Concept_art_staircase_3/concept_art_staircase_shot_3.png",
     "_templates/illustration-simple.md",
