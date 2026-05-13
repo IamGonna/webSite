@@ -13,7 +13,7 @@
             "state": {
               "type": "video",
               "state": {
-                "file": "content/illustration/2026/Animation_VDR/preview_5s.webm"
+                "file": "content/animation/2026/mon test vimeo/preview_5s.webm"
               },
               "icon": "lucide-file",
               "title": "preview_5s"
@@ -263,12 +263,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0d918f2e9f4f955d",
+  "active": "598cfbfbf8d31d17",
   "lastOpenFiles": [
-    "content/reel/2026/mars/test instagram/index.fr.md",
-    "content/illustration/2026/Animation_VDR/preview_5s.webm",
-    "video_preview_webm.sh.bak",
     "content/animation/2026/validation des templates/index.fr.md",
+    "content/animation/2026/mon test vimeo/preview_5s.webm",
+    "content/illustration/2026/Animation_VDR/La Vallée des Rois.md",
+    "content/illustration/2026/Animation_VDR/preview_5s.webm",
+    "content/reel/2026/mars/test instagram/index.fr.md",
+    "video_preview_webm.sh.bak",
     "content/animation/2026/mon test vimeo/index.fr.md",
     "content/illustration/2026/Concept_art_staircase_2/index.fr.md",
     "content/illustration/2026/Concept_art_staircase_2/concept_art_staircase_shot_2.png",
@@ -279,7 +281,6 @@
     "content/illustration/2026/Concept_art_staircase_3/cover.png",
     "content/illustration/2026/Concept_art_staircase_1/cover.png",
     "content/illustration/2026/Concept_art_staircase_1/index.fr.md",
-    "content/illustration/2026/Animation_VDR/La Vallée des Rois.md",
     "conflict-files-obsidian-git.md",
     "content/illustration/2026/Concept_art_staircase_3",
     "content/illustration/2026/Concept_art_staircase_2",
@@ -308,8 +309,6 @@
     "content/illustration/2026/Cage d'escalier/Cage d'escalier.md",
     "content/illustration/2026/cage-d-escalier/Cage d'escalier.md",
     "content/illustration/2026/cage-d-escalier",
-    "test.txt",
-    "content/animation/2026/projet-comparaison-video/index.fr.md",
-    "content/reel/2026/mars/test youtube/index.fr.md"
+    "content/animation/2026/projet-comparaison-video/index.fr.md"
   ]
 }
