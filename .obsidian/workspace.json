@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/illustration/2026/Concept_art_staircase_2/index.fr 1.md",
+                "file": "content/illustration/2026/Concept_art_staircase_1/index.fr.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index.fr 1"
+              "title": "index.fr"
             }
           }
         ]
@@ -267,10 +267,11 @@
   },
   "active": "517db24aae81433e",
   "lastOpenFiles": [
+    "content/illustration/2026/Concept_art_staircase_2/index.fr 1.md",
+    "content/illustration/2026/Concept_art_staircase_3/cover.png",
+    "content/illustration/2026/Concept_art_staircase_2/cover.png",
     "content/illustration/2026/Concept_art_staircase_2/concept_art_staircase_shot_2.png",
     "content/illustration/2026/Concept_art_staircase_1/concept_art_staircase_shot_1.png",
-    "content/illustration/2026/Concept_art_staircase_2/cover.png",
-    "content/illustration/2026/Concept_art_staircase_2/index.fr 1.md",
     "content/illustration/2026/Concept_art_staircase_1/index.fr.md",
     "content/illustration/2026/Animation_VDR/La Vallée des Rois.md",
     "content/illustration/2026/Concept_art_staircase_2/Untitled.md",
@@ -278,7 +279,6 @@
     "content/illustration/2026/Concept_art_staircase_3/index.fr.md",
     "content/illustration/2026/Animation_VDR",
     "content/illustration/2026/Concept_art_staircase_3/concept_art_staircase_shot_3.png",
-    "content/illustration/2026/Concept_art_staircase_3/cover.png",
     "_templates/illustration-simple.md",
     "_templates/illustration-detaillee.md",
     "content/illustration/2026/projet-demo-payasage/index.fr.md",
@@ -293,7 +293,6 @@
     "content/illustration/2026/projet-demo-payasage/cover.jpg",
     "content/illustration/2026/Cage d'escalier/cover.png",
     "content/illustration/2026/Cage d'escalier/cover.jpg",
-    "content/illustration/2026/projet-demo-stitch/cover.jpg",
     "content/animation/2026/cage d'escalier/Untitled.md",
     "content/illustration/2026/Cage d'escalier",
     "content/animation/2026/cage d'escalier",

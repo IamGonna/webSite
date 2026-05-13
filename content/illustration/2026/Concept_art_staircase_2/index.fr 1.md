@@ -8,4 +8,4 @@ tags:
   - soleil
 description: "Projet d’illustrations autour du thème: “Les murs racontent parfois plus de choses que les habitants eux-mêmes.”"
 ---
- Cette première image introduit le hall d’entrée, un lieu calme mais chargé de présence au fond d'une ruelle cachée, marqué par la lumière, les motifs anciens et les détails du quotidien ce projet met en lumière un espace du quotidien qui, derrière sa simplicité apparente, ouvre sur un univers inattendu et insoupçonné pour ceux qui prennent le temps de s’y aventurer.
+ Après s'être introduit dans l'escalier par le hall d’entrée, on arrive soudainement dans un petit coin de jungle inattendu. Cet étage est celui de l'herboriste, il y fait pousser tout type de plantes dans le but d'y traiter le plus grand nombre de patient. Ses plantes aident grandement à donner de la fraicheur en été bien qu'elles manquent quelques peu de soleil dans ce lieu.
