@@ -11,12 +11,14 @@
             "id": "517db24aae81433e",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "content/illustration/2026/Concept_art_staircase_3/cover.png"
+                "file": "content/illustration/2026/Concept_art_staircase_3/index.fr.md",
+                "mode": "preview",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "cover"
+              "icon": "lucide-file",
+              "title": "index.fr"
             }
           }
         ]
@@ -263,12 +265,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5931386f4dbaa41e",
+  "active": "517db24aae81433e",
   "lastOpenFiles": [
+    "content/illustration/2026/Concept_art_staircase_3/cover.png",
     "_templates/illustration-simple.md",
     "_templates/illustration-detaillee.md",
     "content/illustration/2026/Concept_art_staircase_3/index.fr.md",
-    "content/illustration/2026/Concept_art_staircase_3/cover.png",
     "content/illustration/2026/cage-d-escalier/index.fr.md",
     "content/illustration/2026/projet-demo-payasage/index.fr.md",
     "content/illustration/2026/Concept_art_staircase_3/Untitled.md",
@@ -309,7 +311,6 @@
     "content/animation/2026/validation des templates/test eric templates.md",
     "content/animation/2026/test-choix-template/Untitled.md",
     "content/animation/2026/test-1er-Avril/Sans titre.md",
-    "content/animation/2026/test-1er-Avril/Sans titre 1.md",
-    "content/animation/2026/test-choix-template/Sans titre 2.md"
+    "content/animation/2026/test-1er-Avril/Sans titre 1.md"
   ]
 }
