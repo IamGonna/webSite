@@ -5,7 +5,6 @@ draft: false
 featured: true
 tags:
   - concept_art
-  - soleil
 description: "Projet d’illustrations autour du thème: “Les murs racontent parfois plus de choses que les habitants eux-mêmes.”"
 ---
 
