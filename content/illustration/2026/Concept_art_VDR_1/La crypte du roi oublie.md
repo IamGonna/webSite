@@ -12,5 +12,3 @@ thumbnail: content/illustration/2026/Concept_art_VDR_1/cover.jpg
 ---
 
 # La crypte du roi oublié
-
-![[content/illustration/2026/Concept_art_VDR_1/cover.jpg]]

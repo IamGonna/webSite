@@ -36,7 +36,28 @@ if (!videoUrl) {
   return;
 }
 
-await tp.file.rename(title);
+await tp.file.rename("index.fr");
+
+const currentFolder = tp.file.folder(true);
+const vaultBase = app.vault.adapter.getBasePath?.() ?? app.vault.adapter.basePath;
+const previewFile = "preview_5s.webm";
+const previewPath = currentFolder ? `${currentFolder}/${previewFile}` : previewFile;
+const previewAbs = `${vaultBase}/${previewPath}`;
+const scriptAbs = `${vaultBase}/_templates/scripts/video_preview_webm.sh`;
+const shellQuote = (value) => `'${String(value).replace(/'/g, `'\\''`)}'`;
+
+try {
+  new Notice("Génération de la preview vidéo…");
+  await tp.system.exec(`bash ${shellQuote(scriptAbs)} ${shellQuote(videoUrl)} 00:00:05 5 ${shellQuote(previewAbs)}`);
+  if (await app.vault.adapter.exists(previewPath)) {
+    new Notice(`Preview générée : ${previewFile}`);
+  } else {
+    new Notice(`Preview demandée, mais fichier non retrouvé : ${previewPath}`);
+  }
+} catch (error) {
+  console.error(error);
+  new Notice("Preview vidéo non générée — voir console Obsidian / yt-dlp");
+}
 
 const tagsYaml = tagsInput
   .split(",")
@@ -45,15 +66,18 @@ const tagsYaml = tagsInput
   .map(t => `  - "${t.replace(/"/g, '\\"')}"`)
   .join("\n");
 
+const escapeYaml = (value) => String(value ?? "").replace(/"/g, '\\"');
+
 tR = `---
-title: "${title.replace(/"/g, '\\"')}"
+title: "${escapeYaml(title)}"
 date: ${tp.date.now("YYYY-MM-DD")}
 draft: ${draftChoice}
 featured: ${featuredChoice}
 tags:
 ${tagsYaml || '  - ""'}
-description: "${description.replace(/"/g, '\\"')}"
-${platform}: "${videoUrl.replace(/"/g, '\\"')}"
+description: "${escapeYaml(description)}"
+${platform}: "${escapeYaml(videoUrl)}"
+preview: "${previewFile}"
 ---
 
 # ${title}

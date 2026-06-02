@@ -20,8 +20,37 @@
               "icon": "lucide-file",
               "title": "La crypte du roi oublié"
             }
+          },
+          {
+            "id": "922b5e589b1acf71",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "content/animation/2026/Animation_VDR/index.fr.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "index.fr"
+            }
+          },
+          {
+            "id": "b6cd87980448f6bf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "content/illustration/2026/Concept_art_VDR_1/La crypte du roi oublie.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "La crypte du roi oublie"
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -105,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/illustration/2026/Concept_art_VDR_1/La crypte du roi oublié.md",
+                "file": "content/animation/2026/Animation_VDR/index.fr.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +144,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for La crypte du roi oublié"
+              "title": "Backlinks for index.fr"
             }
           },
           {
@@ -124,12 +153,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/illustration/2026/Concept_art_VDR_1/La crypte du roi oublié.md",
+                "file": "content/animation/2026/Animation_VDR/index.fr.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from La crypte du roi oublié"
+              "title": "Outgoing links from index.fr"
             }
           },
           {
@@ -167,13 +196,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/illustration/2026/Concept_art_VDR_1/La crypte du roi oublié.md",
+                "file": "content/animation/2026/Animation_VDR/index.fr.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of La crypte du roi oublié"
+              "title": "Outline of index.fr"
             }
           },
           {
@@ -182,7 +211,7 @@
             "state": {
               "type": "footnotes",
               "state": {
-                "file": "content/illustration/2026/Concept_art_VDR_1/La crypte du roi oublié.md"
+                "file": "content/animation/2026/Animation_VDR/index.fr.md"
               },
               "icon": "lucide-file-signature",
               "title": "Footnotes"
@@ -229,10 +258,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "content/illustration/2026/Concept_art_VDR_1/La crypte du roi oublié.md"
+                "file": "content/animation/2026/Animation_VDR/index.fr.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for La crypte du roi oublié"
+              "title": "File properties for index.fr"
             }
           },
           {
@@ -272,11 +301,21 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5931386f4dbaa41e",
+  "active": "598cfbfbf8d31d17",
   "lastOpenFiles": [
+    "content/illustration/2026/Concept_art_staircase_2/concept_art_staircase_shot_2.png",
+    "content/illustration/2026/Concept_art_staircase_2/index.fr 1.md",
+    "content/illustration/2026/Concept_art_staircase_2/index.fr.md",
+    "content/animation/2026/Animation_VDR/La Vallee des Rois.md",
+    "conflict-files-obsidian-git.md",
+    "content/animation/2026/Animation_VDR/index.fr.md",
+    "content/animation/2026/Animation_VDR/preview_5s.webm",
+    "content/illustration/2026/Concept_art_VDR_1/La crypte du roi oublie.md",
+    "content/animation/2026/mon test vimeo/preview_5s.webm",
     "content/illustration/2026/Concept_art_VDR_1/cover.jpg",
-    "content/illustration/2026/Concept_art_VDR_1/La crypte du roi oublié.md",
-    "content/illustration/2026/Concept_art_VDR_1/La crypte du roi oublié.md",
+    "video_preview_webm.sh.bak",
+    "content/animation/2026/mon test vimeo",
+    "_templates/scripts/video_preview_webm.sh",
     "content/illustration/2026/Concept_art_staircase_3/cover.png",
     "content/illustration/2026/Concept_art_staircase_3/concept_art_staircase_shot_3.png",
     "content/illustration/2026/Concept_art_staircase_3/index.fr.md",
@@ -284,7 +323,6 @@
     "content/sketchbook/_index.en.md",
     "content/illustration/2026/Concept_art_VDR_1",
     "content/illustration/2026/projet-demo-stitch/index.en.md",
-    "content/animation/2026/Animation_VDR/La Vallée des Rois.md",
     "content/illustration/2026/tit-et-gros-minet/cover.webp",
     "content/illustration/2026/projet-demo-stitch-et-lilo/cover.jpg",
     "content/illustration/2026/projet-demo-payasage/cover.jpg",
@@ -298,26 +336,17 @@
     "content/animation/2026/Projet-demo-video-01/index.fr.md",
     "content/animation/2026/Projet-demo-video-01/index.en.md",
     "content/illustration/2026/Concept_art_staircase_2/cover.png",
-    "content/illustration/2026/Concept_art_staircase_2/concept_art_staircase_shot_2.png",
     "content/illustration/2026/Concept_art_staircase_1/index.fr.md",
-    "content/illustration/2026/Concept_art_staircase_2/index.fr 1.md",
     "content/illustration/2026/Concept_art_staircase_2/Untitled.md",
     "content/illustration/2026/Concept_art_staircase_2",
-    "content/animation/2026/Animation_VDR",
     "_templates/illustration-simple.md",
     "_templates/illustration-detaillee.md",
     "content/illustration/2026/projet-demo-payasage/index.fr.md",
     "content/illustration/2026/Concept_art_staircase_3/Untitled.md",
-    "content/illustration/2026/Concept_art_staircase_3",
-    "obsidian.zip",
     "content/illustration/2026/Cage d'escalier/Cage d'escalier.md",
-    "content/illustration/2026/Concept_art_staircase_1",
     "content/illustration/2026/projet-demo-payasage/index.en.md",
     "content/animation/2026/cage d'escalier/Untitled.md",
-    "content/illustration/2026/Cage d'escalier",
     "content/reel/2026/mars/test youtube/index.fr.md",
-    "_templates/scripts/test.md",
-    "content/animation/2026/test/test.md",
-    "content/digital-comic/2026/test nouveau format affichage/index.fr.md"
+    "_templates/scripts/test.md"
   ]
 }

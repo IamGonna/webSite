@@ -4,7 +4,7 @@
   "templates_pairs": [
     [
       "video_preview",
-      "\"/mnt/datas/01-dev/web/gab-web/video_preview_webm.sh\" \"$url\" \"$start\" \"$dur\" \"$out\"\"$dur\" \"$out\""
+      "\"/mnt/datas/01-dev/web/gab-web/_templates/scripts/video_preview_webm.sh\" \"$url\" \"$start\" \"$dur\" \"$out\""
     ],
     [
       "",

@@ -59,19 +59,12 @@
 {{/* Cover large sauf si Instagram reel ou digital-comic */}}
 {{ if and $cover (not $instagramRaw) (ne .Section "digital-comic") }}
   <section class="project__cover">
-    <a
-      class="project__cover-link"
-      href="{{ $cover.RelPermalink }}"
-      data-lightbox="image"
-      data-lightbox-src="{{ $cover.RelPermalink }}"
-      aria-label="Agrandir {{ .Title }}">
-      <img
-        class="project__img"
-        src="{{ $cover.RelPermalink }}"
-        alt="{{ .Title }}"
-        loading="eager"
-        decoding="async">
-    </a>
+    <img
+      class="project__img"
+      src="{{ $cover.RelPermalink }}"
+      alt="{{ .Title }}"
+      loading="eager"
+      decoding="async">
   </section>
 {{ end }}
 
