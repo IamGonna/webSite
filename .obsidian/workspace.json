@@ -301,8 +301,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "598cfbfbf8d31d17",
+  "active": "b6cd87980448f6bf",
   "lastOpenFiles": [
+    "content/illustration/2026/Concept_art_VDR_1/cover.jpg",
+    "content/illustration/2026/Concept_art_VDR_1/La crypte du roi oublie.md",
     "content/illustration/2026/Concept_art_staircase_2/concept_art_staircase_shot_2.png",
     "content/illustration/2026/Concept_art_staircase_2/index.fr 1.md",
     "content/illustration/2026/Concept_art_staircase_2/index.fr.md",
@@ -310,9 +312,7 @@
     "conflict-files-obsidian-git.md",
     "content/animation/2026/Animation_VDR/index.fr.md",
     "content/animation/2026/Animation_VDR/preview_5s.webm",
-    "content/illustration/2026/Concept_art_VDR_1/La crypte du roi oublie.md",
     "content/animation/2026/mon test vimeo/preview_5s.webm",
-    "content/illustration/2026/Concept_art_VDR_1/cover.jpg",
     "video_preview_webm.sh.bak",
     "content/animation/2026/mon test vimeo",
     "_templates/scripts/video_preview_webm.sh",
