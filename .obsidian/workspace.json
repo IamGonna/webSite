@@ -39,14 +39,12 @@
             "id": "b6cd87980448f6bf",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "content/illustration/2026/Concept_art_VDR_1/La crypte du roi oublie.md",
-                "mode": "source",
-                "source": false
+                "file": "content/illustration/2026/Concept_art_VDR_1/cover.jpg"
               },
-              "icon": "lucide-file",
-              "title": "La crypte du roi oublie"
+              "icon": "lucide-image",
+              "title": "cover"
             }
           }
         ],
@@ -303,8 +301,8 @@
   },
   "active": "b6cd87980448f6bf",
   "lastOpenFiles": [
-    "content/illustration/2026/Concept_art_VDR_1/cover.jpg",
     "content/illustration/2026/Concept_art_VDR_1/La crypte du roi oublie.md",
+    "content/illustration/2026/Concept_art_VDR_1/cover.jpg",
     "content/illustration/2026/Concept_art_staircase_2/concept_art_staircase_shot_2.png",
     "content/illustration/2026/Concept_art_staircase_2/index.fr 1.md",
     "content/illustration/2026/Concept_art_staircase_2/index.fr.md",

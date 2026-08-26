@@ -33,128 +33,149 @@
     "archetypes": {
       "color": "red",
       "unsynced": [
-        "13f4215323ef336f"
+        "13f4215323ef336f",
+        "b72a781a996fee07"
       ]
     },
     "assets": {
       "color": "red",
       "unsynced": [
-        "13f4215323ef336f"
+        "13f4215323ef336f",
+        "b72a781a996fee07"
       ]
     },
     "content": {
       "icon": "lucide-book-open",
       "color": "green",
       "unsynced": [
-        "13f4215323ef336f"
+        "13f4215323ef336f",
+        "b72a781a996fee07"
       ]
     },
     "data": {
       "color": "red",
       "unsynced": [
-        "13f4215323ef336f"
+        "13f4215323ef336f",
+        "b72a781a996fee07"
       ]
     },
     "i18n": {
       "color": "red",
       "unsynced": [
-        "13f4215323ef336f"
+        "13f4215323ef336f",
+        "b72a781a996fee07"
       ]
     },
     "layouts": {
       "color": "red",
       "unsynced": [
-        "13f4215323ef336f"
+        "13f4215323ef336f",
+        "b72a781a996fee07"
       ]
     },
     "public": {
       "color": "red",
       "unsynced": [
-        "13f4215323ef336f"
+        "13f4215323ef336f",
+        "b72a781a996fee07"
       ]
     },
     "resources": {
       "color": "red",
       "unsynced": [
-        "13f4215323ef336f"
+        "13f4215323ef336f",
+        "b72a781a996fee07"
       ]
     },
     "static": {
       "color": "red",
       "unsynced": [
-        "13f4215323ef336f"
+        "13f4215323ef336f",
+        "b72a781a996fee07"
       ]
     },
     "themes": {
       "color": "orange",
       "unsynced": [
-        "13f4215323ef336f"
+        "13f4215323ef336f",
+        "b72a781a996fee07"
       ]
     },
     "themes/gab-theme": {
       "color": "orange",
       "unsynced": [
-        "13f4215323ef336f"
+        "13f4215323ef336f",
+        "b72a781a996fee07"
       ]
     },
     "themes/gab-theme/archetypes": {
       "color": "red",
       "unsynced": [
-        "13f4215323ef336f"
+        "13f4215323ef336f",
+        "b72a781a996fee07"
       ]
     },
     "themes/gab-theme/assets": {
       "color": "orange",
       "unsynced": [
-        "13f4215323ef336f"
+        "13f4215323ef336f",
+        "b72a781a996fee07"
       ]
     },
     "themes/gab-theme/assets/css": {
       "color": "yellow",
       "unsynced": [
-        "13f4215323ef336f"
+        "13f4215323ef336f",
+        "b72a781a996fee07"
       ]
     },
     "themes/gab-theme/assets/fonts": {
       "color": "green",
       "unsynced": [
-        "13f4215323ef336f"
+        "13f4215323ef336f",
+        "b72a781a996fee07"
       ]
     },
     "themes/gab-theme/assets/js": {
       "color": "orange",
       "unsynced": [
-        "13f4215323ef336f"
+        "13f4215323ef336f",
+        "b72a781a996fee07"
       ]
     },
     "themes/gab-theme/content": {
       "color": "red",
       "unsynced": [
-        "13f4215323ef336f"
+        "13f4215323ef336f",
+        "b72a781a996fee07"
       ]
     },
     "themes/gab-theme/data": {
       "color": "red",
       "unsynced": [
-        "13f4215323ef336f"
+        "13f4215323ef336f",
+        "b72a781a996fee07"
       ]
     },
     "themes/gab-theme/i18n": {
       "color": "red",
       "unsynced": [
-        "13f4215323ef336f"
+        "13f4215323ef336f",
+        "b72a781a996fee07"
       ]
     },
     "themes/gab-theme/layouts": {
       "color": "red",
       "unsynced": [
-        "13f4215323ef336f"
+        "13f4215323ef336f",
+        "b72a781a996fee07"
       ]
     },
     "themes/gab-theme/static": {
       "color": "red",
       "unsynced": [
-        "13f4215323ef336f"
+        "13f4215323ef336f",
+        "b72a781a996fee07"
       ]
     }
   },
