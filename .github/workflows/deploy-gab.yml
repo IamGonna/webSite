@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout private repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
@@ -23,13 +23,27 @@ jobs:
         run: hugo --minify
 
       - name: Deploy public folder to VPS
+        env:
+          DEPLOY_HOST: ${{ secrets.GAB_VPS_HOST }}
+          DEPLOY_SSH_KEY: ${{ secrets.GAB_VPS_SSH_KEY }}
         run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.GAB_VPS_SSH_KEY }}" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan -p 54321 -H "${{ secrets.GAB_VPS_HOST }}" >> ~/.ssh/known_hosts
+          set -euo pipefail
 
-          rsync -az --delete \
-            -e "ssh -p 54321 -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes" \
+          test -n "$DEPLOY_HOST" || { echo "ERROR: le secret GAB_VPS_HOST est absent." >&2; exit 1; }
+          test -n "$DEPLOY_SSH_KEY" || { echo "ERROR: le secret GAB_VPS_SSH_KEY est absent." >&2; exit 1; }
+
+          install -d -m 700 ~/.ssh
+          printf '%s\n' "$DEPLOY_SSH_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+
+          echo "Vérification de l’hôte SSH et de la cible de déploiement…"
+          ssh-keyscan -T 15 -p 54321 -H "$DEPLOY_HOST" >> ~/.ssh/known_hosts
+          ssh -p 54321 -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes -o BatchMode=yes -o ConnectTimeout=15 \
+            "gitgabpull@$DEPLOY_HOST" \
+            'test -d /home/docker/web/gab/html && test -w /home/docker/web/gab/html'
+
+          echo "Synchronisation du site Hugo…"
+          rsync -az --delete --itemize-changes \
+            -e "ssh -p 54321 -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes -o BatchMode=yes -o ConnectTimeout=15" \
             public/ \
-            gitgabpull@${{ secrets.GAB_VPS_HOST }}:/home/docker/web/gab/html/
+            "gitgabpull@$DEPLOY_HOST:/home/docker/web/gab/html/"
